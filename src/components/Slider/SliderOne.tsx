@@ -4,7 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import * as Icon from "@phosphor-icons/react/dist/ssr"
 import { Swiper, SwiperSlide } from "swiper/react"
-import { Autoplay, Navigation, Pagination } from "swiper/modules"
+import { Pagination } from "swiper/modules" // Removed Navigation and Autoplay modules
 import "swiper/css/bundle"
 import { useState } from "react"
 
@@ -19,26 +19,18 @@ const SliderOne = () => {
   return (
     <>
       <div className="slider-block style-one">
-        <div className="prev-arrow flex items-center justify-center">
-          <Icon.CaretLeft className="text-white heading6" weight="bold" />
-        </div>
+        {/* Removed left and right arrow navigation */}
         <div className="slider-main">
           <Swiper
             spaceBetween={0}
             slidesPerView={1}
-            navigation={{
-              prevEl: ".prev-arrow",
-              nextEl: ".next-arrow",
-            }}
             loop={true}
             pagination={{ clickable: true }}
             speed={400}
-            modules={[Pagination, Autoplay, Navigation]}
+            modules={[Pagination]} // Only using Pagination now
             className="h-full relative"
-            autoplay={{
-              delay: 4000,
-            }}
           >
+            {/* First Slide */}
             <SwiperSlide>
               <div className="slider-item slider-first">
                 <div className="bg-img">
@@ -53,36 +45,41 @@ const SliderOne = () => {
                 </div>
                 <div className="container">
                   <div className="text-content flex-columns-between">
-                    <div className="heading2">
+                    <div className="heading2 text-black font-bold">
                       <div className="relative overflow-hidden">
                         <span className="block relative overflow-hidden">
-                          Simplify and Secure
+                          Empower and Protect
                         </span>
                         <span className="block absolute top-0 left-0 w-full h-full">
-                          Simplify and Secure
+                          Empower and Protect
                         </span>
                       </div>
                       <div className="relative overflow-hidden">
                         <span className="block relative overflow-hidden">
-                          Your Payments with
+                          Your Consumer Rights with
                         </span>
                         <span className="block absolute top-0 left-0 w-full h-full">
-                          Your Payments with
+                          Your Consumer Rights with
                         </span>
                       </div>
                       <div className="relative overflow-hidden">
                         <span className="text-[#0597fc] block relative overflow-hidden">
-                          Our Solution
+                          Our Platform
                         </span>
                         <span className="text-[#0597fc] block absolute top-0 left-0 w-full h-full">
-                          Our Solution
+                          Our Platform
                         </span>
                       </div>
                     </div>
-                    <div className="body2 mt-3 text-secondary">
-                      Our platform offers secure and reliable investment <br />
-                      opportunities in the rapidly growing world of
-                      cryptocurrency.
+                    <div className="body2 mt-3 text-black font-bold">
+                      Our platform helps consumers understand and assert their
+                      rights
+                      <br />
+                      in various transactions and services, ensuring a fair
+                      experience.
+                      <br />
+                      We provide the tools to protect your rights and advocate
+                      for justice.
                     </div>
                     <div className="button-block md:mt-10 mt-6">
                       <Link
@@ -92,15 +89,16 @@ const SliderOne = () => {
                         onMouseLeave={() => setHovered(false)}
                         href="/service/service-one"
                       >
-                        Discovery now
+                        Discover More
                       </Link>
                     </div>
                   </div>
                 </div>
               </div>
             </SwiperSlide>
-            {/* Repeat SwiperSlide for other slides */}
-            <SwiperSlide>
+
+            {/* Commented out second and third slides */}
+            {/* <SwiperSlide>
               <div className="slider-item slider-second">
                 <div className="bg-img">
                   <Image
@@ -114,7 +112,7 @@ const SliderOne = () => {
                 </div>
                 <div className="container">
                   <div className="text-content flex-columns-between">
-                    <div className="heading2">
+                    <div className="heading2 text-black font-bold">
                       <div className="relative overflow-hidden">
                         <span className="block relative overflow-hidden">
                           Empower Your
@@ -140,7 +138,7 @@ const SliderOne = () => {
                         </span>
                       </div>
                     </div>
-                    <div className="body2 mt-3 text-secondary">
+                    <div className="body2 mt-3 text-black font-bold">
                       Our platform offers secure and reliable investment <br />
                       opportunities in the rapidly growing world of
                       cryptocurrency.
@@ -174,7 +172,7 @@ const SliderOne = () => {
                 </div>
                 <div className="container">
                   <div className="text-content flex-columns-between">
-                    <div className="heading2">
+                    <div className="heading2 text-black font-bold">
                       <div className="relative overflow-hidden">
                         <span className="block relative overflow-hidden">
                           Powerful Payment
@@ -200,7 +198,7 @@ const SliderOne = () => {
                         </span>
                       </div>
                     </div>
-                    <div className="body2 mt-3 text-secondary">
+                    <div className="body2 mt-3 text-black font-bold">
                       Trust us to help you navigate the complex landscape and{" "}
                       <br />
                       achieve your financial goals with peace of mind.
@@ -219,12 +217,10 @@ const SliderOne = () => {
                   </div>
                 </div>
               </div>
-            </SwiperSlide>
+            </SwiperSlide> */}
           </Swiper>
         </div>
-        <div className="next-arrow flex items-center justify-center">
-          <Icon.CaretRight className="text-white heading6" weight="bold" />
-        </div>
+        {/* Removed arrow navigation */}
       </div>
     </>
   )

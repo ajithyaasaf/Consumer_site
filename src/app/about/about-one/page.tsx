@@ -23,15 +23,15 @@ export default function AboutStyleOne() {
             link="About Us"
             img="/images/banner/about.jpg"
             title="About Us"
-            desc="We perform a full analysis of the client’s website and collect information about all the competitors to formulate a proper strategy."
+            desc="We assess your consumer rights and compare them with industry standards to develop the most effective strategy for your needs."
           />
           <AboutTwo />
-          <CounterTwo classname="lg:pb-[100px] sm:pb-16 pb-10" />
+          {/* <CounterTwo classname="lg:pb-[100px] sm:pb-16 pb-10" /> */}
 
           {/* <ServiceAboutOne data={serviceData} /> */}
           {/*  <OurTeam />
           <PartnerAbout /> */}
-          <CtaOne />
+          {/* <CtaOne /> */}
         </main>
         <footer id="footer">
           <Footer />

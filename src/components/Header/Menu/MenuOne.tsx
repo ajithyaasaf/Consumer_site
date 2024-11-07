@@ -10,6 +10,11 @@ const MenuOne = () => {
   const pathname = usePathname()
   const [fixedHeader, setFixedHeader] = useState(false)
   const [openMenuMobile, setOpenMenuMobile] = useState(false)
+  const [openSubNavMobile, setOpenSubNavMobile] = useState<number | null>(null)
+
+  const handleOpenSubNavMobile = (index: number) => {
+    setOpenSubNavMobile(openSubNavMobile === index ? null : index) // Toggle submenu open state
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,12 +38,12 @@ const MenuOne = () => {
         <div className="container flex items-center justify-between h-20">
           <Link className="menu-left-block" href="/">
             <Image
-              src={"/images/Logo.jpg"}
+              src={"/images/Logo2.png"}
               width={2000}
               height={1000}
               alt="logo"
               priority={true}
-              className="w-[149px] max-sm:w-[132px]"
+              className="w-[80px] max-sm:w-[60px]"
             />
           </Link>
           <div className="menu-center-block h-full">
@@ -54,35 +59,90 @@ const MenuOne = () => {
                 </Link>
               </li>
 
-              {/* About */}
+              {/* About Us */}
               <li
                 className={`nav-item h-full flex items-center justify-center ${
-                  pathname.includes("/about/") ? "active" : ""
+                  pathname === "/about/about-one" ? "active" : ""
                 }`}
               >
                 <Link className="nav-link text-title" href="/about/about-one">
-                  <span>About</span>
+                  <span>About Us</span>
                 </Link>
               </li>
 
-              {/* Services */}
+              {/* Membership Application Subscription */}
               <li
                 className={`nav-item h-full flex items-center justify-center ${
-                  pathname.includes("/service") ? "active" : ""
+                  pathname === "/about/about-one" ? "active" : ""
+                }`}
+              >
+                <Link className="nav-link text-title" href="/about/about-one">
+                  <span>Membership Application Subscription</span>
+                </Link>
+              </li>
+
+              {/* Consumer History */}
+              <li
+                className={`nav-item h-full flex items-center justify-center ${
+                  pathname === "/service/service-one" ? "active" : ""
                 }`}
               >
                 <Link
                   className="nav-link text-title"
                   href="/service/service-one"
                 >
-                  <span>Services</span>
+                  <span>Consumer History</span>
                 </Link>
+                {/* Consumer History Submenu */}
+                <ul className="sub-nav">
+                  <li
+                    className={`sub-nav-item ${
+                      pathname === "/service/service-detail" ? "active" : ""
+                    }`}
+                  >
+                    <Link
+                      className="sub-nav-link font-medium"
+                      href="/service/service-detail"
+                    >
+                      Recent Consumer Case Success Results
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+
+              {/* Gallery */}
+              <li
+                className={`nav-item h-full flex items-center justify-center ${
+                  pathname === "/contact/contact-one" ? "active" : ""
+                }`}
+              >
+                <Link
+                  className="nav-link text-title"
+                  href="/contact/contact-one"
+                >
+                  <span>Gallery</span>
+                </Link>
+                {/* Gallery Submenu */}
+                <ul className="sub-nav">
+                  <li
+                    className={`sub-nav-item ${
+                      pathname === "/service/service-detail" ? "active" : ""
+                    }`}
+                  >
+                    <Link
+                      className="sub-nav-link font-medium"
+                      href="/service/service-detail"
+                    >
+                      Awareness Videos
+                    </Link>
+                  </li>
+                </ul>
               </li>
 
               {/* Contact */}
               <li
                 className={`nav-item h-full flex items-center justify-center ${
-                  pathname.includes("/contact/") ? "active" : ""
+                  pathname === "/contact/contact-one" ? "active" : ""
                 }`}
               >
                 <Link
@@ -94,6 +154,7 @@ const MenuOne = () => {
               </li>
             </ul>
           </div>
+
           <div className="menu-right-block flex items-center">
             <div className="icon-call">
               <i
@@ -113,30 +174,134 @@ const MenuOne = () => {
             </div>
           </div>
         </div>
+
         {/* Mobile Menu */}
         <div id="menu-mobile-block" className={`${openMenuMobile && "open"}`}>
           <div className="menu-mobile-main">
             <div className="container">
               <ul className="menu-nav-mobile h-full pt-1 pb-1">
-                <li className="nav-item-mobile h-full pt-2 pb-2 pl-3 pr-3">
-                  <Link className="nav-link-mobile" href="/">
-                    Home
-                  </Link>
+                {/* Home */}
+                <li
+                  className={`nav-item-mobile h-full flex-column gap-2 pt-2 pb-2 pl-3 pr-3 pointer home ${
+                    openSubNavMobile === 1 ? "active" : ""
+                  }`}
+                  onClick={() => handleOpenSubNavMobile(1)}
+                >
+                  <a
+                    className="nav-link-mobile flex items-center justify-between"
+                    href="#!"
+                  >
+                    <span className="body2 font-semibold">Home</span>
+                  </a>
                 </li>
-                <li className="nav-item-mobile h-full pt-2 pb-2 pl-3 pr-3">
-                  <Link className="nav-link-mobile" href="/about/about-one">
-                    About
-                  </Link>
+
+                {/* About Us */}
+                <li
+                  className={`nav-item-mobile h-full flex-column gap-2 pt-4 pb-2 pl-3 pr-3 pointer about ${
+                    openSubNavMobile === 2 ? "active" : ""
+                  }`}
+                  onClick={() => handleOpenSubNavMobile(2)}
+                >
+                  <a
+                    className="nav-link-mobile flex items-center justify-between"
+                    href="#!"
+                  >
+                    <span className="body2 font-semibold">About Us</span>
+                  </a>
                 </li>
-                <li className="nav-item-mobile h-full pt-2 pb-2 pl-3 pr-3">
-                  <Link className="nav-link-mobile" href="/service/service-one">
-                    Services
-                  </Link>
+
+                {/* Membership Application Subscription */}
+                <li
+                  className={`nav-item-mobile h-full flex-column gap-2 pt-2 pb-2 pl-3 pr-3 pointer membership ${
+                    openSubNavMobile === 3 ? "active" : ""
+                  }`}
+                  onClick={() => handleOpenSubNavMobile(3)}
+                >
+                  <a
+                    className="nav-link-mobile flex items-center justify-between"
+                    href="#!"
+                  >
+                    <span className="body2 font-semibold">
+                      Membership Application Subscription
+                    </span>
+                  </a>
                 </li>
-                <li className="nav-item-mobile h-full pt-2 pb-2 pl-3 pr-3">
-                  <Link className="nav-link-mobile" href="/contact/contact-one">
-                    Contact
-                  </Link>
+
+                {/* Consumer History */}
+                <li
+                  className={`nav-item-mobile h-full flex-column gap-2 pt-4 pb-2 pl-3 pr-3 pointer services ${
+                    openSubNavMobile === 4 ? "active" : ""
+                  }`}
+                  onClick={() => handleOpenSubNavMobile(4)}
+                >
+                  <a
+                    className="nav-link-mobile flex items-center justify-between"
+                    href="#!"
+                  >
+                    <span className="body2 font-semibold">
+                      Consumer History
+                    </span>
+                    <Icon.CaretRight className="text-base" />
+                  </a>
+                  <ul
+                    className={`sub-nav-mobile ${
+                      openSubNavMobile === 4 ? "open" : ""
+                    }`}
+                  >
+                    <li className="sub-nav-item pl-3 pr-3 pt-2 pb-2">
+                      <Link
+                        className="sub-nav-link text-base"
+                        href="/service/service-detail"
+                      >
+                        Recent Consumer Case Success Results
+                      </Link>
+                    </li>
+                  </ul>
+                </li>
+
+                {/* Gallery */}
+                <li
+                  className={`nav-item-mobile h-full flex-column gap-2 pt-4 pb-2 pl-3 pr-3 pointer gallery ${
+                    openSubNavMobile === 5 ? "active" : ""
+                  }`}
+                  onClick={() => handleOpenSubNavMobile(5)}
+                >
+                  <a
+                    className="nav-link-mobile flex items-center justify-between"
+                    href="#!"
+                  >
+                    <span className="body2 font-semibold">Gallery</span>
+                    <Icon.CaretRight className="text-base" />
+                  </a>
+                  <ul
+                    className={`sub-nav-mobile ${
+                      openSubNavMobile === 5 ? "open" : ""
+                    }`}
+                  >
+                    <li className="sub-nav-item pl-3 pr-3 pt-2 pb-2">
+                      <Link
+                        className="sub-nav-link text-base"
+                        href="/service/service-detail"
+                      >
+                        Awareness Videos
+                      </Link>
+                    </li>
+                  </ul>
+                </li>
+
+                {/* Contact */}
+                <li
+                  className={`nav-item-mobile h-full flex-column gap-2 pt-2 pb-2 pl-3 pr-3 pointer contact ${
+                    openSubNavMobile === 6 ? "active" : ""
+                  }`}
+                  onClick={() => handleOpenSubNavMobile(6)}
+                >
+                  <a
+                    className="nav-link-mobile flex items-center justify-between"
+                    href="/contact/contact-one"
+                  >
+                    <span className="body2 font-semibold">Contact</span>
+                  </a>
                 </li>
               </ul>
             </div>

@@ -7,6 +7,7 @@ import CaseStudyOne from "@/components/Section/CaseStudy/CaseStudyOne"
 import Footer from "@/components/Footer/Footer"
 import CounterTwo from "@/components/Section/Counter/CounterTwo"
 import PartnerAbout from "@/components/Section/Partner/PartnerAbout"
+import PaymentGatewayOneFirst from "@/components/Section/PaymentGateway/PaymentGatewayOneFirst"
 
 export default function Home() {
   return (
@@ -18,10 +19,14 @@ export default function Home() {
         </header>
         <main className="content">
           <SliderOne />
-          <ServiceOne data={serviceData} />
+          {/* <ServiceOne data={serviceData} /> */}
+          <div className="my-16 bg-gray-100">
+            <PaymentGatewayOneFirst />
+          </div>
+
           {/* Our Process */}
-          <CaseStudyOne /> {/*  type of loans */}
-          <CounterTwo classname="bg-gray-100 my-16" />
+          {/*     <CaseStudyOne />  type of loans */}
+          {/* <CounterTwo classname="bg-gray-100 my-16" /> */}
           {/* <PartnerAbout classname="bg-gray-100 my-16" /> */}
           {/* Add any necessary classname here */}
           <footer id="footer">

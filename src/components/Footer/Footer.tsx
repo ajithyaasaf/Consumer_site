@@ -10,17 +10,17 @@ const Footer = () => {
           <div className="flex max-lg:flex-col max-lg:items-start gap-y-10 pb-10">
             <div className="lg:w-1/4">
               <div className="footer-company-infor flex flex-col justify-between gap-5">
+                {/* Reduced Logo Size */}
                 <Image
-                  width={4000}
-                  height={3000}
-                  className="footer-logo w-[145px]"
-                  src="/images/Logo.jpg"
+                  width={60} // Reduced width
+                  height={60} // Reduced height
+                  className="footer-logo w-[65px]"
+                  src="/images/Logo2.png"
                   alt="Logo"
                 />
                 <div className="text caption1 text-white">
-                  We are a diversified company specialized in providing
-                  comprehensive financial solutions for individuals and
-                  businesses.
+                  We are committed to empowering consumers with the knowledge,
+                  resources, and support they need to protect their rights.
                 </div>
                 <div className="list-social flex items-center gap-2.5 style-one">
                   <Link
@@ -40,11 +40,12 @@ const Footer = () => {
                 </div>
               </div>
             </div>
+
             <div className="lg:w-1/2">
               <div className="footer-navigate flex items-center justify-center gap-20">
                 <div className="footer-nav-item">
                   <div className="item-heading text-button-sm text-white">
-                    Quick Links
+                    Consumer Resources
                   </div>
                   <ul className="list-nav mt-1">
                     <li className="mt-3">
@@ -52,15 +53,23 @@ const Footer = () => {
                         className="caption1 has-line-before line-white text-surface hover-underline"
                         href="/about/about-one"
                       >
-                        About us
+                        About Us
                       </Link>
                     </li>
                     <li className="mt-3">
                       <Link
                         className="caption1 has-line-before line-white text-surface hover-underline"
-                        href="/service/service-one"
+                        href="/consumer-rights"
                       >
-                        Services
+                        Consumer Rights
+                      </Link>
+                    </li>
+                    <li className="mt-3">
+                      <Link
+                        className="caption1 has-line-before line-white text-surface hover-underline"
+                        href="/complaints"
+                      >
+                        Submit a Complaint
                       </Link>
                     </li>
                     <li className="mt-3">
@@ -68,26 +77,27 @@ const Footer = () => {
                         className="caption1 has-line-before line-white text-surface hover-underline"
                         href="/contact/contact-one"
                       >
-                        Contact
+                        Contact Us
                       </Link>
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
+
             <div className="lg:w-1/4">
               <div className="company-contact">
                 <div className="heading text-button-sm text-white">
                   Contact Us
                 </div>
                 <div className="mt-3 text-surface">
-                  If you have any questions, feel free to reach out to us!
+                  If you need assistance or have questions regarding your
+                  consumer rights, we're here to help!
                 </div>
                 <div className="mt-2 flex items-center">
                   <Icon.MapPin weight="light" className="text-surface" />
                   <div className="caption1 text-surface ml-2">
-                    93,1st Floor, Navalar Nagar, Bye Pass Road, Madurai - 625
-                    016
+                    10, கல்பாலம் ரோடு, கோரிப்பாளையம், மதுரை - 625 002
                   </div>
                 </div>
                 <div className="mt-2">
@@ -101,26 +111,14 @@ const Footer = () => {
               </div>
             </div>
           </div>
+
           <div className="border-line"></div>
+
           <div className="footer-bottom flex items-center justify-between pt-3 pb-3">
             <div className="left-block flex items-center">
               <div className="copy-right text-surface caption1">
-                ©2024 Designed and developed by Godiva Tech. All Rights
-                Reserved.
+                ©2024 Consumer Rights Organization. All Rights Reserved.
               </div>
-            </div>
-            <div className="nav-link flex items-center gap-2.5">
-              <a className="text-surface caption1 hover-underline" href="#!">
-                Terms Of Services
-              </a>
-              <span className="text-surface caption1">|</span>
-              <a className="text-surface caption1 hover-underline" href="#!">
-                Privacy Policy
-              </a>
-              <span className="text-surface caption1">|</span>
-              <a className="text-surface caption1 hover-underline" href="#!">
-                Cookie Policy
-              </a>
             </div>
           </div>
         </div>
