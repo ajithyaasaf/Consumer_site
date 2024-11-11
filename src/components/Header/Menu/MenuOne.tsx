@@ -113,25 +113,25 @@ const MenuOne = () => {
               {/* Gallery */}
               <li
                 className={`nav-item h-full flex items-center justify-center ${
-                  pathname === "/contact/contact-one" ? "active" : ""
+                  pathname === "/gallery/awarness-videos" ? "active" : ""
                 }`}
               >
                 <Link
                   className="nav-link text-title"
-                  href="/contact/contact-one"
+                  href="/gallery/awarness-videos"
                 >
-                  <span>Gallery</span>
+                  <span>Galleryyyyyy</span>
                 </Link>
                 {/* Gallery Submenu */}
                 <ul className="sub-nav">
                   <li
                     className={`sub-nav-item ${
-                      pathname === "/service/service-detail" ? "active" : ""
+                      pathname === "/gallery/awarness-videos" ? "active" : ""
                     }`}
                   >
                     <Link
                       className="sub-nav-link font-medium"
-                      href="/service/service-detail"
+                      href="/gallery/awarness-videos"
                     >
                       Awareness Videos
                     </Link>
@@ -281,7 +281,7 @@ const MenuOne = () => {
                     <li className="sub-nav-item pl-3 pr-3 pt-2 pb-2">
                       <Link
                         className="sub-nav-link text-base"
-                        href="/service/service-detail"
+                        href="/gallery/awarnessvideos"
                       >
                         Awareness Videos
                       </Link>

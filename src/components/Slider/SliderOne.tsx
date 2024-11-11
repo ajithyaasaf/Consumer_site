@@ -33,16 +33,19 @@ const SliderOne = () => {
             {/* First Slide */}
             <SwiperSlide>
               <div className="slider-item slider-first">
-                <div className="bg-img">
+                <div className="bg-img relative">
                   <Image
-                    src={"/images/slider/Home_Banner_1.jpg"}
+                    src="/images/slider/Home_Banner_1.jpg"
                     width={4000}
                     height={3000}
                     alt="bgslider"
                     priority={true}
                     className="w-full h-full object-cover"
                   />
+                  {/* Black overlay */}
+                  <div className="absolute inset-0 bg-black opacity-50"></div>
                 </div>
+
                 <div className="container">
                   <div className="text-content flex-columns-between">
                     <div className="heading2 text-black font-bold">

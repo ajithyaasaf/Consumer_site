@@ -101,6 +101,7 @@ export default function ContactStyleOne() {
     <>
       <div className="overflow-x-hidden">
         <header id="header">
+          <TopNavOne />
           <MenuOne />
         </header>
         <main className="content">
@@ -115,35 +116,45 @@ export default function ContactStyleOne() {
               <div className="xm:w-5/6 w-full flex max-xl:flex-col xl:items-center gap-y-8">
                 {/* Left Side Section (Address, Phone, Email) */}
                 <div className="w-full xl:w-2/5 xl:pr-20">
-                  <div className="contact-info">
-                    <div className="heading">
-                      <div className="heading5">Contact Info</div>
-                      <div className="body3 text-secondary mt-2">
+                  <div className="contact-info bg-gray-50 p-6 rounded-lg shadow-2xl">
+                    <div className="heading mb-6">
+                      <div className="heading5 text-xl font-semibold">
+                        Contact Info
+                      </div>
+                      <div className="body3 text-secondary mt-2 text-sm">
                         Get in touch with us for more information.
                       </div>
                     </div>
-                    <ul className="list-none">
-                      <li className="flex items-center gap-4 mt-6">
-                        <Icon.Phone className="text-xl" />
+                    <ul className="list-none space-y-6">
+                      <li className="flex items-center gap-4 hover:text-blue-600 transition-all duration-300">
+                        <Icon.Phone className="text-xl text-blue-500" />
                         <div>
-                          <div className="caption1">Phone Number</div>
-                          <div className="body3">+91 93 44 10 8771</div>
+                          <div className="caption1 text-sm text-gray-700">
+                            Phone Number
+                          </div>
+                          <div className="body3 text-secondary text-sm">
+                            +91 93 44 10 8771
+                          </div>
                         </div>
                       </li>
-                      <li className="flex items-center gap-4 mt-6">
-                        <Icon.Envelope className="text-xl" />
+                      <li className="flex items-center gap-4 hover:text-blue-600 transition-all duration-300">
+                        <Icon.Envelope className="text-xl text-blue-500" />
                         <div>
-                          <div className="caption1">Email Address</div>
-                          <div className="body3">
+                          <div className="caption1 text-sm text-gray-700">
+                            Email Address
+                          </div>
+                          <div className="body3 text-secondary text-sm">
                             tnccpctamilnadu2012@gmail.com
                           </div>
                         </div>
                       </li>
-                      <li className="flex items-center gap-4 mt-6">
-                        <Icon.MapPin className="text-xl" />
+                      <li className="flex items-center gap-4 hover:text-blue-600 transition-all duration-300">
+                        <Icon.MapPin className="text-xl text-blue-500" />
                         <div>
-                          <div className="caption1">Address</div>
-                          <div className="body3">
+                          <div className="caption1 text-sm text-gray-700">
+                            Address
+                          </div>
+                          <div className="body3 text-secondary text-sm">
                             10, கல்பாலம் ரோடு, கோரிப்பாளையம், மதுரை - 625 002
                           </div>
                         </div>
@@ -158,9 +169,11 @@ export default function ContactStyleOne() {
                     onSubmit={handleSubmit}
                     className="form-block flex flex-col justify-between gap-5"
                   >
-                    <div className="heading">
-                      <div className="heading5">Your Rights Matter</div>
-                      <div className="body3 text-secondary mt-2">
+                    <div className="heading mb-6">
+                      <div className="heading5 text-xl font-semibold">
+                        Your Rights Matter
+                      </div>
+                      <div className="body3 text-secondary mt-2 text-sm">
                         We are here to support you in asserting and protecting
                         your rights. Reach out to us for expert guidance and
                         assistance within 24 hours.

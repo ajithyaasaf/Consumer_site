@@ -22,7 +22,7 @@ const Footer = () => {
                   We are committed to empowering consumers with the knowledge,
                   resources, and support they need to protect their rights.
                 </div>
-                <div className="list-social flex items-center gap-2.5 style-one">
+                {/*      <div className="list-social flex items-center gap-2.5 style-one">
                   <Link
                     className="item rounded-full w-7 h-7 border-2 border-grey flex items-center justify-center"
                     href="https://www.facebook.com/profile.php?id=61566147273973"
@@ -37,7 +37,7 @@ const Footer = () => {
                   >
                     <i className="icon-insta text-xs"></i>
                   </Link>
-                </div>
+                </div> */}
               </div>
             </div>
 
@@ -117,7 +117,9 @@ const Footer = () => {
           <div className="footer-bottom flex items-center justify-between pt-3 pb-3">
             <div className="left-block flex items-center">
               <div className="copy-right text-surface caption1">
-                ©2024 Consumer Rights Organization. All Rights Reserved.
+                ©2024 Designed and devloped by{" "}
+                <a href="https://godivatech.com/">Godiva tech.</a> All Rights
+                Reserved.
               </div>
             </div>
           </div>
