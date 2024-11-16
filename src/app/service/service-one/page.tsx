@@ -53,9 +53,9 @@ export default function HistoryPage() {
                   </p>
                   <p className="body2 text-secondary mt-4">
                     With the enactment of this law, consumers now feel that they
-                    are in a position to declare "sellers beware," whereas
-                    previously, the consumers were at the receiving end and
-                    generally told "buyers beware."
+                    are in a position to declare &quot;sellers beware,&quot;
+                    whereas previously, the consumers were at the receiving end
+                    and generally told &quot;buyers beware.&quot;
                   </p>
 
                   {/* Key Provisions */}

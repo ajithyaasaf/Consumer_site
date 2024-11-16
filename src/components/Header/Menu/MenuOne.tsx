@@ -79,7 +79,7 @@ const MenuOne = () => {
           {/* Mobile Menu Hamburger Icon (Visible on Mobile) */}
           <div
             className="menu-hamburger block sm:hidden cursor-pointer"
-            onClick={() => setOpenMenuMobile(!openMenuMobile)}
+            onClick={() => setOpenMenuMobile(!openMenuMobile)} // Ensure the toggle state works
           >
             <Icon.List className="text-2xl" weight="bold" />
           </div>
@@ -141,6 +141,7 @@ const MenuOne = () => {
                   }`}
                   onClick={() => handleOpenSubNavMobile(index + 1)}
                 >
+                  {/* Parent link that opens submenu */}
                   <Link
                     className="nav-link-mobile flex items-center justify-between"
                     href={item.href}
@@ -153,7 +154,7 @@ const MenuOne = () => {
                   {item.submenu && (
                     <ul
                       className={`sub-nav-mobile ${
-                        openSubNavMobile === index + 1 ? "open" : ""
+                        openSubNavMobile === index + 1 ? "open" : "hidden"
                       }`}
                     >
                       {item.submenu.map((subItem, subIndex) => (
@@ -191,6 +192,9 @@ const MenuOne = () => {
             }
             .menu-mobile-main {
               display: block; /* Ensure mobile menu is displayed */
+            }
+            .menu-nav-mobile {
+              display: block; /* Mobile menu items should be displayed when the menu is open */
             }
           }
           @media (min-width: 641px) and (max-width: 1024px) {

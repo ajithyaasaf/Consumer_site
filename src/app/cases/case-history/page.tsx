@@ -8,6 +8,7 @@ import TopNavOne from "@/components/Header/TopNav/TopNavOne"
 import MenuOne from "@/components/Header/Menu/MenuOne"
 import Footer from "@/components/Footer/Footer"
 import ComplaintForm from "@/components/Cases/complaintform/ComplaintForm"
+import Image from "next/image" // Importing Image component from Next.js
 
 const CaseHistoryPage = () => {
   const [currentPage, setCurrentPage] = useState(0)
@@ -34,10 +35,14 @@ const CaseHistoryPage = () => {
                   <div key={item.id} className="case-item block">
                     <div className="w-full">
                       <div className="bg-img w-full overflow-hidden rounded-2xl">
-                        <img
+                        {/* Using Next.js Image component here */}
+                        <Image
                           className="w-full h-full object-cover"
                           src={item.img}
                           alt={item.title}
+                          layout="responsive" // Makes the image responsive
+                          width={1200} // Adjust the width based on your design
+                          height={800} // Adjust the height based on your design
                         />
                       </div>
 

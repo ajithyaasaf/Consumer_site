@@ -181,7 +181,7 @@ const ComplaintForm = () => {
           ></textarea>
         </div>
 
-        <div className="mb-4 flex items-center">
+        {/*   <div className="mb-4 flex items-center">
           <input
             type="checkbox"
             id="consent"
@@ -194,7 +194,7 @@ const ComplaintForm = () => {
           <label htmlFor="consent" className="text-sm font-semibold">
             I agree to the terms and conditions *
           </label>
-        </div>
+        </div> */}
 
         <div className="mb-4 button-block">
           <button

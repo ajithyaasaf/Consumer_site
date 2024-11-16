@@ -21,7 +21,7 @@ export default function AboutStyleOne() {
         <main className="content">
           <BreadcrumbItem
             link="About Us"
-            img="/images/banner/about.jpg"
+            img="/images/bannerimage.jpeg"
             title="About Us"
             desc="We assess your consumer rights and compare them with industry standards to develop the most effective strategy for your needs."
           />
