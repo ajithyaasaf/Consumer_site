@@ -76,7 +76,7 @@ const Footer = () => {
                 </div>
                 <div className="mt-3 text-surface">
                   If you need assistance or have questions regarding your
-                  consumer rights, we're here to help!
+                  consumer rights, we&apos;re here to help!
                 </div>
                 <div className="mt-2 flex items-center">
                   <Icon.MapPin weight="light" className="text-surface" />
@@ -101,7 +101,7 @@ const Footer = () => {
           <div className="footer-bottom flex items-center justify-between pt-3 pb-3">
             <div className="left-block flex items-center">
               <div className="copy-right text-surface caption1">
-                ©2024 Designed and developed by{" "}
+                &copy;2024 Designed and developed by{" "}
                 <a href="https://godivatech.com/">Godiva tech.</a> All rights
                 reserved.
               </div>
