@@ -1,13 +1,13 @@
-import Link from 'next/link'
-import Image from 'next/image'
+import Link from "next/link"
+import Image from "next/image"
 import TopNavOne from "@/components/Header/TopNav/TopNavOne"
 import MenuOne from "@/components/Header/Menu/MenuOne"
 import BreadcrumbItem from "@/components/Breadcrumb/BreadcrumbItem"
-import caseStudyData from '@/data/case-study.json'
+import caseStudyData from "@/data/case-study.json"
 import CtaOne from "@/components/Section/CTA/CtaOne"
 import Footer from "@/components/Footer/Footer"
-import * as Icon from "@phosphor-icons/react/dist/ssr";
-import TestimonialTwo from '@/components/Section/Testimonial/TestimonialTwo'
+import * as Icon from "@phosphor-icons/react/dist/ssr"
+import TestimonialTwo from "@/components/Section/Testimonial/TestimonialTwo"
 
 export default function CaseStudyDetail() {
   return (
@@ -108,7 +108,8 @@ export default function CaseStudyDetail() {
                 <div className="w-full lg:w-1/2 lg:pr-10 bg-video">
                   <div className="bg-img h-full w-full">
                     <Image
-                      width={4000} height={4000}
+                      width={4000}
+                      height={4000}
                       className="w-full block rounded-2xl"
                       src="/images/blog/930x593.png"
                       alt=""
@@ -188,7 +189,8 @@ export default function CaseStudyDetail() {
                 <div className="w-full lg:w-1/2 lg:pl-[55px]">
                   <div className="bg-img w-full overflow-hidden rounded-2xl">
                     <Image
-                      width={4000} height={4000}
+                      width={4000}
+                      height={4000}
                       className="w-full h-full hover-scale block"
                       src="/images/component/assessment.png"
                       alt=""
@@ -204,7 +206,7 @@ export default function CaseStudyDetail() {
         <footer id="footer">
           <Footer />
         </footer>
-      </div >
+      </div>
     </>
-  );
+  )
 }

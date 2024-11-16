@@ -43,17 +43,17 @@ const Footer = () => {
                     <li className="mt-3">
                       <Link
                         className="caption1 has-line-before line-white text-surface hover-underline"
-                        href="/consumer-rights"
+                        href="/cases/case-history"
                       >
-                        Consumer Rights
+                        Case Results
                       </Link>
                     </li>
                     <li className="mt-3">
                       <Link
                         className="caption1 has-line-before line-white text-surface hover-underline"
-                        href="/complaints"
+                        href="/gallery/awareness-videos"
                       >
-                        Submit a Complaint
+                        Gallery
                       </Link>
                     </li>
                     <li className="mt-3">
@@ -61,7 +61,7 @@ const Footer = () => {
                         className="caption1 has-line-before line-white text-surface hover-underline"
                         href="/contact/contact-one"
                       >
-                        Contact Us
+                        MemberShip Form
                       </Link>
                     </li>
                   </ul>
