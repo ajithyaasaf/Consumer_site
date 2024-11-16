@@ -31,9 +31,11 @@ const PaymentGatewayOneFirst = () => {
             }}
           >
             <div className="text lg:mt-14 mt-5">
-              <h3 className="heading3 text-black font-bold">
-                TNCCPC’s Core Activities
+              <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-3xl font-bold text-black leading-tight text-center">
+                TNCCPC’s (Tamil Nadu Citizen Consumer Protection Center) Core
+                Activities
               </h3>
+
               <div className="body3 text-black font-semibold lg:mt-6 mt-4">
                 TNCCPC’s core activities encompass education, research,
                 awareness campaigns, and advocacy. We forge partnerships with

@@ -52,24 +52,19 @@ const AboutTwo = () => {
               >
                 <div className="title text-secondary mt-4">
                   <p>
-                    Founded in 2009 by Mr. Jaya Prakash, JP FinServ is a trusted
-                    financial services company committed to making borrowing
-                    easy, quick, and accessible. With over a decade of
-                    experience, we have helped thousands of customers achieve
-                    their financial goals by providing a diverse range of loan
-                    products tailored to meet various needs.
+                    The Tamil Nadu Citizen Consumer Protection Centre (TNCCPC)
+                    was established to empower consumers and promote consumer
+                    rights across the state. Our commitment is to provide
+                    education and resources that enable consumers to make
+                    informed decisions.
                   </p>
-
-                  <h3 className="mt-4">Our Journey and Success</h3>
+                  <h3 className="mt-4">Our Mission</h3>
                   <p>
-                    Since its inception, JP FinServ has grown significantly,
-                    having disbursed over 2,500 loans to date. Currently, we
-                    manage a portfolio of more than 1,200 active loans,
-                    reflecting our commitment to supporting our clients with
-                    reliable financial solutions. We understand the unique needs
-                    of each borrower, which is why we offer loans with simple
-                    eligibility requirements, even for clients without Income
-                    Tax Returns (ITR).
+                    Our mission is to ensure that every consumer in Tamil Nadu
+                    is aware of their rights and can exercise them effectively.
+                    We engage with communities, providing training and resources
+                    to help consumers navigate their rights and
+                    responsibilities.
                   </p>
                 </div>
               </div>
@@ -81,11 +76,12 @@ const AboutTwo = () => {
         <div className="row flex flex-col lg:flex-row gap-6 mt-16">
           <div className="w-full lg:w-1/2 flex flex-col">
             <h2 className="text-3xl font-semibold">
-              Tamil Nadu Citizen Consumer Protection Centre (TNCCPC)
+              {" "}
+              Tamil Nadu Citizen Consumer Protection Centre (TNCCPC){" "}
             </h2>
             <p className="mt-4 text-lg">
               The mission of the Government of Tamil Nadu is to empower all
-              consumers in the state. TNCPO’s core activities encompass
+              consumers in the state. TNCCPC’s core activities encompass
               education, research, awareness campaigns, and advocacy. We
               collaborate with grassroots social organizations to increase
               public participation, especially among marginalized and
@@ -121,17 +117,16 @@ const AboutTwo = () => {
               </li>
             </ul>
             <p className="mt-6">
-              TNCPO is dedicated to serving the interests of consumers across
+              TNCCPC is dedicated to serving the interests of consumers across
               Tamil Nadu, empowering them to make informed choices and exercise
               their rights effectively.
             </p>
           </div>
-
           {/* Section 2 Image: Hidden on mobile (sm and below), visible on large screens (lg) */}
           <div className="w-full lg:w-1/2 hidden lg:block">
             <div className="bg-img w-full overflow-hidden rounded-3xl">
               <Image
-                src="/images/Logo3.jpg" // Reusing the same image here
+                src="/images/about1.jpg"
                 width={4000}
                 height={4000}
                 alt="TNCCPC"
@@ -146,7 +141,7 @@ const AboutTwo = () => {
           <div className="w-full lg:w-1/2">
             <div className="bg-img w-full overflow-hidden rounded-3xl">
               <Image
-                src="/images/Logo3.jpg" // Reusing the same image here
+                src="/images/about2.jpg"
                 width={4000}
                 height={4000}
                 alt="Consumer Rights"
@@ -165,11 +160,9 @@ const AboutTwo = () => {
               about their rights, making them vulnerable to exploitation by
               unscrupulous producers and retailers.
             </p>
-
             <p className="mt-4">
               Below are common instances of consumer rights violations:
             </p>
-
             <ul className="list-disc list-inside mt-4">
               <li>
                 Under Weighing: Sellers provide less quantity than paid for.
@@ -185,28 +178,6 @@ const AboutTwo = () => {
             </ul>
           </div>
         </div>
-
-        {/* Contact Buttons */}
-        {/* <div className="button-block flex items-center gap-5 md:mt-10 mt-6 pb-2">
-          <a
-            className="button-main text-white text-button rounded-full"
-            style={{
-              backgroundColor: isHovered ? "#0597fc" : "#152152",
-            }}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-            href="/contact/contact-one" // Updated URL
-          >
-            Get started
-          </a>
-          <a
-            className="button-main text-on-surface hover:bg-black hover:text-white hover:border-transparent bg-white text-button rounded-full border-2 border-blue flex items-center gap-2"
-            href="/contact/contact-one"
-          >
-            <i className="ph ph-phone text-xl"></i>
-            <span>(+91) 97919 12211</span>
-          </a>
-        </div> */}
       </div>
     </div>
   )

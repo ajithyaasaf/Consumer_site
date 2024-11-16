@@ -3,48 +3,91 @@
 import TopNavOne from "@/components/Header/TopNav/TopNavOne"
 import MenuOne from "@/components/Header/Menu/MenuOne"
 import BreadcrumbItem from "@/components/Breadcrumb/BreadcrumbItem"
-import ServiceFive from "@/components/Section/Service/ServiceFive"
-import serviceData from "@/data/service.json"
-import Partner from "@/components/Section/Partner/PartnerAbout"
-import CtaOne from "@/components/Section/CTA/CtaOne"
 import Footer from "@/components/Footer/Footer"
-import Image from "next/image"
 import { useState } from "react"
 
-export default function ServiceStyleOne() {
+export default function HistoryPage() {
   const [isHovered, setIsHovered] = useState(false)
 
   return (
     <>
       <div className="overflow-x-hidden">
+        {/* Header */}
         <header id="header">
           <TopNavOne />
           <MenuOne />
         </header>
+
         <main className="content">
+          {/* Breadcrumb */}
           <BreadcrumbItem
-            link="Our Services"
+            link="History of the Consumer Protection Act"
             img="/images/banner/services.jpg"
-            title="Our Services"
-            desc="Expand your knowledge and skills in cryptocurrency trading through our educational resources."
+            title="History of the Consumer Protection Act"
+            desc="Learn about the important legislation that protects consumers in India."
           />
+
+          {/* Main Content: History Section */}
           <div className="mt-[100px]">
-            <div className="container">
-              <div className="flex gap-8 max-lg:flex-col-reverse">
-                <div className="w-full lg:w-1/2 flex flex-col justify-between gap-5 pr-10">
-                  <div className="heading3">
-                    Effective Risk Management Solutions for Financial Stability
-                  </div>
-                  <div className="body2 text-secondary">
-                    We offer reliable Risk Management services to safeguard your
-                    assets, ensure financial stability, and navigate rapidly
-                    changing business environments. We understand that managing
-                    risks is crucial for the sustainability and success of your
-                    enterprise.
-                  </div>
-                  <div className="button-block">
+            <div className="container px-4 lg:px-8">
+              <div className="flex flex-col gap-12">
+                {/* Main Heading */}
+                <div className="w-full text-center">
+                  <h1 className="heading3 text-3xl sm:text-4xl font-bold text-gray-900">
+                    The Consumer Protection Act, 1986: A Milestone for Consumers
+                  </h1>
+                </div>
+
+                {/* History Content */}
+                <div className="w-full text-justify">
+                  <p className="body2 text-secondary">
+                    The Consumer Protection Act, 1986 (hereinafter referred to
+                    as the Act) is one of the benevolent social legislations
+                    intended to protect the large body of consumers from
+                    exploitation. The Act has come as a panacea for consumers
+                    all over the country and has assumed the shape of
+                    practically the most important legislation enacted in the
+                    country during the last few years. It has become the vehicle
+                    for enabling people to secure speedy and inexpensive
+                    redressal of their grievances.
+                  </p>
+                  <p className="body2 text-secondary mt-4">
+                    With the enactment of this law, consumers now feel that they
+                    are in a position to declare "sellers beware," whereas
+                    previously, the consumers were at the receiving end and
+                    generally told "buyers beware."
+                  </p>
+
+                  {/* Key Provisions */}
+                  <h3 className="text-2xl sm:text-3xl font-semibold text-primary mt-8">
+                    Key Provisions of the Act
+                  </h3>
+                  <p className="body2 text-secondary mt-4">
+                    The Act postulates the establishment of the Central Consumer
+                    Protection Council and the State Consumer Protection
+                    Councils for the purpose of spreading consumer awareness.
+                    The Central Council is headed by the Minister-in-charge of
+                    Consumer Affairs in the Central Government, while at the
+                    State level, it is the Minister-in-charge of Consumer
+                    Affairs in the State Government who heads the State Council.
+                  </p>
+
+                  {/* Dispute Redressal */}
+                  <h3 className="text-2xl sm:text-3xl font-semibold text-primary mt-8">
+                    Consumer Dispute Redressal Mechanism
+                  </h3>
+                  <p className="body2 text-secondary mt-4">
+                    To provide cheap, speedy, and simple redressal to consumer
+                    disputes, quasi-judicial machinery has been set up at each
+                    District, State, and National levels called District Forums,
+                    State Consumer Disputes Redressal Commission, and National
+                    Consumer Disputes Redressal Commission, respectively.
+                  </p>
+
+                  {/* Call-to-Action */}
+                  <div className="text-center mt-10">
                     <a
-                      className="button-main inline-block py-3 px-9 rounded-full"
+                      className="button-main inline-block py-3 px-9 rounded-full transition duration-300 ease-in-out"
                       style={{
                         backgroundColor: isHovered ? "#0597fc" : "#0f2054",
                         color: "#fff",
@@ -53,32 +96,18 @@ export default function ServiceStyleOne() {
                       onMouseLeave={() => setIsHovered(false)}
                       href="/contact/contact-one"
                     >
-                      Contact
+                      Contact Us
                     </a>
-                  </div>
-                </div>
-                <div className="w-full lg:w-1/2">
-                  <div className="bg-img w-full overflow-hidden rounded-xl">
-                    <Image
-                      width={5000}
-                      height={5000}
-                      className="w-full h-full block"
-                      src="/images/component/assessment.png"
-                      alt=""
-                    />
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="mb-8">
-            <ServiceFive data={serviceData} title="" />
-          </div>
-          {/* Uncomment if Partner component is needed */}
-          {/* <Partner /> */}
-          <CtaOne />
+
+          {/* Footer */}
         </main>
-        <footer id="footer">
+
+        <footer id="footer" className="mt-16">
           <Footer />
         </footer>
       </div>

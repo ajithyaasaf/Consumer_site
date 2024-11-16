@@ -1,5 +1,4 @@
 "use client"
-
 import React, { useEffect, useState } from "react"
 import { usePathname } from "next/navigation"
 import Image from "next/image"
@@ -21,292 +20,196 @@ const MenuOne = () => {
       const scrollPosition = window.scrollY
       setFixedHeader(scrollPosition > 400)
     }
-
     window.addEventListener("scroll", handleScroll)
     return () => {
       window.removeEventListener("scroll", handleScroll)
     }
   }, [])
 
+  const navItems = [
+    { label: "Home", href: "/", submenu: null },
+    { label: "About", href: "/about/about-one", submenu: null },
+    {
+      label: "Case Success Results",
+      href: "/cases/case-history",
+      submenu: null,
+    },
+    { label: "Consumer History", href: "/service/service-one", submenu: null },
+    {
+      label: "Gallery",
+      href: "/gallery/awareness-videos",
+      submenu: [
+        { label: "Awareness Videos", href: "/gallery/awareness-videos" },
+      ],
+    },
+    { label: "Membership Form", href: "/contact/contact-one", submenu: null },
+  ]
+
   return (
     <>
       <div
         className={`header-menu style-one bg-white ${
-          fixedHeader ? "fixed" : ""
+          fixedHeader ? "fixed top-0 left-0 right-0 z-50" : ""
         }`}
       >
-        <div className="container flex items-center justify-between h-20">
-          <Link className="menu-left-block" href="/">
-            <Image
-              src={"/images/Logo2.png"}
-              width={2000}
-              height={1000}
-              alt="logo"
-              priority={true}
-              className="w-[80px] max-sm:w-[60px]"
-            />
-          </Link>
-          <div className="menu-center-block h-full">
-            <ul className="menu-nav flex items-center h-full">
-              {/* Home */}
-              <li
-                className={`nav-item h-full flex items-center justify-center ${
-                  pathname === "/" ? "active" : ""
-                }`}
-              >
-                <Link className="nav-link text-title" href="/">
-                  <span>Home</span>
-                </Link>
-              </li>
-
-              {/* About Us */}
-              <li
-                className={`nav-item h-full flex items-center justify-center ${
-                  pathname === "/about/about-one" ? "active" : ""
-                }`}
-              >
-                <Link className="nav-link text-title" href="/about/about-one">
-                  <span>About Us</span>
-                </Link>
-              </li>
-
-              {/* Membership Application Subscription */}
-              <li
-                className={`nav-item h-full flex items-center justify-center ${
-                  pathname === "/about/about-one" ? "active" : ""
-                }`}
-              >
-                <Link className="nav-link text-title" href="/about/about-one">
-                  <span>Membership Application Subscription</span>
-                </Link>
-              </li>
-
-              {/* Consumer History */}
-              <li
-                className={`nav-item h-full flex items-center justify-center ${
-                  pathname === "/service/service-one" ? "active" : ""
-                }`}
-              >
-                <Link
-                  className="nav-link text-title"
-                  href="/service/service-one"
-                >
-                  <span>Consumer History</span>
-                </Link>
-                {/* Consumer History Submenu */}
-                <ul className="sub-nav">
-                  <li
-                    className={`sub-nav-item ${
-                      pathname === "/service/service-detail" ? "active" : ""
-                    }`}
-                  >
-                    <Link
-                      className="sub-nav-link font-medium"
-                      href="/service/service-detail"
-                    >
-                      Recent Consumer Case Success Results
-                    </Link>
-                  </li>
-                </ul>
-              </li>
-
-              {/* Gallery */}
-              <li
-                className={`nav-item h-full flex items-center justify-center ${
-                  pathname === "/gallery/awarness-videos" ? "active" : ""
-                }`}
-              >
-                <Link
-                  className="nav-link text-title"
-                  href="/gallery/awarness-videos"
-                >
-                  <span>Galleryyyyyy</span>
-                </Link>
-                {/* Gallery Submenu */}
-                <ul className="sub-nav">
-                  <li
-                    className={`sub-nav-item ${
-                      pathname === "/gallery/awarness-videos" ? "active" : ""
-                    }`}
-                  >
-                    <Link
-                      className="sub-nav-link font-medium"
-                      href="/gallery/awarness-videos"
-                    >
-                      Awareness Videos
-                    </Link>
-                  </li>
-                </ul>
-              </li>
-
-              {/* Contact */}
-              <li
-                className={`nav-item h-full flex items-center justify-center ${
-                  pathname === "/contact/contact-one" ? "active" : ""
-                }`}
-              >
-                <Link
-                  className="nav-link text-title"
-                  href="/contact/contact-one"
-                >
-                  <span>Contact</span>
-                </Link>
-              </li>
-            </ul>
+        <div className="container flex items-center justify-between h-20 mx-auto px-4">
+          {/* Left Block: Logo */}
+          <div className="menu-left-block flex items-center gap-3">
+            <Link href="/">
+              <Image
+                src={"/images/Logo2.png"}
+                width={2000}
+                height={1000}
+                alt="logo"
+                priority={true}
+                className="w-[80px] max-sm:w-[60px]"
+              />
+            </Link>
+            {/* Tamil Text (Visible on Mobile) */}
+            <span className="text-sm font-medium text-gray-700 md:hidden">
+              தமிழ்நாடு குடிமக்கள் நுகர்வோர் பாதுகாப்பு மையம்
+            </span>
           </div>
 
-          <div className="menu-right-block flex items-center">
-            <div className="icon-call">
-              <i
-                className="icon-phone-call text-4xl"
-                style={{ color: "#152152" }}
-              ></i>
-            </div>
-            <div className="text ml-3">
-              <div className="text caption1 pl-2">Call us</div>
-              <div className="number text-button">+91 9791912211</div>
-            </div>
-            <div
-              className="menu-humburger hidden pointer"
-              onClick={() => setOpenMenuMobile(!openMenuMobile)}
-            >
-              <Icon.List className="text-2xl" weight="bold" />
-            </div>
+          {/* Center Block: Tamil Text (Hidden on Mobile) */}
+          <div className="flex-1 text-center text-sm font-medium text-gray-700 hidden md:block">
+            <span>தமிழ்நாடு குடிமக்கள் நுகர்வோர் பாதுகாப்பு மையம்</span>
+          </div>
+
+          {/* Mobile Menu Hamburger Icon (Visible on Mobile) */}
+          <div
+            className="menu-hamburger block sm:hidden cursor-pointer"
+            onClick={() => setOpenMenuMobile(!openMenuMobile)}
+          >
+            <Icon.List className="text-2xl" weight="bold" />
+          </div>
+
+          {/* Menu Section: Navigation Items */}
+          <div
+            className={`menu-center-block h-full flex items-center justify-end ${
+              openMenuMobile ? "block" : "hidden"
+            } sm:flex`}
+          >
+            <ul className="menu-nav flex items-center h-full">
+              {navItems.map((item, index) => (
+                <li
+                  key={index}
+                  className={`nav-item h-full flex items-center justify-center ${
+                    pathname === item.href ? "active" : ""
+                  }`}
+                >
+                  <Link className="nav-link text-title" href={item.href}>
+                    <span>{item.label}</span>
+                  </Link>
+                  {item.submenu && (
+                    <ul className="sub-nav">
+                      {item.submenu.map((subItem, subIndex) => (
+                        <li
+                          key={subIndex}
+                          className={`sub-nav-item ${
+                            pathname === subItem.href ? "active" : ""
+                          }`}
+                        >
+                          <Link
+                            className="sub-nav-link font-medium"
+                            href={subItem.href}
+                          >
+                            {subItem.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
         {/* Mobile Menu */}
-        <div id="menu-mobile-block" className={`${openMenuMobile && "open"}`}>
-          <div className="menu-mobile-main">
-            <div className="container">
-              <ul className="menu-nav-mobile h-full pt-1 pb-1">
-                {/* Home */}
+        <div
+          id="menu-mobile-block"
+          className={`menu-mobile-main ${openMenuMobile ? "open" : ""}`}
+        >
+          <div className="container">
+            <ul className="menu-nav-mobile h-full pt-1 pb-1">
+              {navItems.map((item, index) => (
                 <li
-                  className={`nav-item-mobile h-full flex-column gap-2 pt-2 pb-2 pl-3 pr-3 pointer home ${
-                    openSubNavMobile === 1 ? "active" : ""
+                  key={index}
+                  className={`nav-item-mobile h-full flex-column gap-2 pt-2 pb-2 pl-3 pr-3 cursor-pointer ${
+                    openSubNavMobile === index + 1 ? "active" : ""
                   }`}
-                  onClick={() => handleOpenSubNavMobile(1)}
+                  onClick={() => handleOpenSubNavMobile(index + 1)}
                 >
-                  <a
+                  <Link
                     className="nav-link-mobile flex items-center justify-between"
-                    href="#!"
+                    href={item.href}
                   >
-                    <span className="body2 font-semibold">Home</span>
-                  </a>
-                </li>
+                    <span className="body2 font-semibold">{item.label}</span>
+                    {item.submenu && <Icon.CaretRight className="text-base" />}
+                  </Link>
 
-                {/* About Us */}
-                <li
-                  className={`nav-item-mobile h-full flex-column gap-2 pt-4 pb-2 pl-3 pr-3 pointer about ${
-                    openSubNavMobile === 2 ? "active" : ""
-                  }`}
-                  onClick={() => handleOpenSubNavMobile(2)}
-                >
-                  <a
-                    className="nav-link-mobile flex items-center justify-between"
-                    href="#!"
-                  >
-                    <span className="body2 font-semibold">About Us</span>
-                  </a>
+                  {/* Mobile Submenu */}
+                  {item.submenu && (
+                    <ul
+                      className={`sub-nav-mobile ${
+                        openSubNavMobile === index + 1 ? "open" : ""
+                      }`}
+                    >
+                      {item.submenu.map((subItem, subIndex) => (
+                        <li
+                          key={subIndex}
+                          className="sub-nav-item pl-3 pr-3 pt-2 pb-2"
+                        >
+                          <Link
+                            className="sub-nav-link text-base"
+                            href={subItem.href}
+                          >
+                            {subItem.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </li>
-
-                {/* Membership Application Subscription */}
-                <li
-                  className={`nav-item-mobile h-full flex-column gap-2 pt-2 pb-2 pl-3 pr-3 pointer membership ${
-                    openSubNavMobile === 3 ? "active" : ""
-                  }`}
-                  onClick={() => handleOpenSubNavMobile(3)}
-                >
-                  <a
-                    className="nav-link-mobile flex items-center justify-between"
-                    href="#!"
-                  >
-                    <span className="body2 font-semibold">
-                      Membership Application Subscription
-                    </span>
-                  </a>
-                </li>
-
-                {/* Consumer History */}
-                <li
-                  className={`nav-item-mobile h-full flex-column gap-2 pt-4 pb-2 pl-3 pr-3 pointer services ${
-                    openSubNavMobile === 4 ? "active" : ""
-                  }`}
-                  onClick={() => handleOpenSubNavMobile(4)}
-                >
-                  <a
-                    className="nav-link-mobile flex items-center justify-between"
-                    href="#!"
-                  >
-                    <span className="body2 font-semibold">
-                      Consumer History
-                    </span>
-                    <Icon.CaretRight className="text-base" />
-                  </a>
-                  <ul
-                    className={`sub-nav-mobile ${
-                      openSubNavMobile === 4 ? "open" : ""
-                    }`}
-                  >
-                    <li className="sub-nav-item pl-3 pr-3 pt-2 pb-2">
-                      <Link
-                        className="sub-nav-link text-base"
-                        href="/service/service-detail"
-                      >
-                        Recent Consumer Case Success Results
-                      </Link>
-                    </li>
-                  </ul>
-                </li>
-
-                {/* Gallery */}
-                <li
-                  className={`nav-item-mobile h-full flex-column gap-2 pt-4 pb-2 pl-3 pr-3 pointer gallery ${
-                    openSubNavMobile === 5 ? "active" : ""
-                  }`}
-                  onClick={() => handleOpenSubNavMobile(5)}
-                >
-                  <a
-                    className="nav-link-mobile flex items-center justify-between"
-                    href="#!"
-                  >
-                    <span className="body2 font-semibold">Gallery</span>
-                    <Icon.CaretRight className="text-base" />
-                  </a>
-                  <ul
-                    className={`sub-nav-mobile ${
-                      openSubNavMobile === 5 ? "open" : ""
-                    }`}
-                  >
-                    <li className="sub-nav-item pl-3 pr-3 pt-2 pb-2">
-                      <Link
-                        className="sub-nav-link text-base"
-                        href="/gallery/awarnessvideos"
-                      >
-                        Awareness Videos
-                      </Link>
-                    </li>
-                  </ul>
-                </li>
-
-                {/* Contact */}
-                <li
-                  className={`nav-item-mobile h-full flex-column gap-2 pt-2 pb-2 pl-3 pr-3 pointer contact ${
-                    openSubNavMobile === 6 ? "active" : ""
-                  }`}
-                  onClick={() => handleOpenSubNavMobile(6)}
-                >
-                  <a
-                    className="nav-link-mobile flex items-center justify-between"
-                    href="/contact/contact-one"
-                  >
-                    <span className="body2 font-semibold">Contact</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
+              ))}
+            </ul>
           </div>
         </div>
+
+        {/* Styles for Responsive Behavior */}
+        <style jsx>{`
+          .menu-nav-mobile {
+            display: none;
+          }
+          .menu-mobile-main.open {
+            display: block; /* Show mobile menu when open */
+          }
+          @media (max-width: 640px) {
+            .menu-nav {
+              display: none; /* Hide desktop menu on mobile */
+            }
+            .menu-mobile-main {
+              display: block; /* Ensure mobile menu is displayed */
+            }
+          }
+          @media (min-width: 641px) and (max-width: 1024px) {
+            .menu-nav {
+              display: flex; /* Show the desktop menu for tablets */
+              flex-direction: row; /* Align items in a row */
+              width: 100%; /* Ensure it takes full width */
+              justify-content: space-between; /* Space items evenly */
+            }
+            .menu-mobile-main {
+              display: none; /* Hide mobile menu on larger screens */
+            }
+          }
+          @media (min-width: 1025px) {
+            .menu-mobile-main {
+              display: none; /* Hide mobile menu on larger screens */
+            }
+          }
+        `}</style>
       </div>
     </>
   )

@@ -9,15 +9,15 @@ import CtaOne from "@/components/Section/CTA/CtaOne"
 import Footer from "@/components/Footer/Footer"
 import * as Icon from "@phosphor-icons/react/dist/ssr"
 
-export default function ContactStyleOne() {
+export default function MembershipForm() {
   const [isHovered, setIsHovered] = useState(false)
   const [formData, setFormData] = useState({
     name: "",
-    phone: "",
     email: "",
-    selectedFile: null as File | null,
-    message: "",
+    phone: "",
     address: "",
+    profession: "",
+    willingToJoin: "", // 'yes' or 'no'
   })
 
   const [successMessage, setSuccessMessage] = useState("")
@@ -31,62 +31,39 @@ export default function ContactStyleOne() {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  // Handle file upload change
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0] || null
-    setFormData({ ...formData, selectedFile: file })
-  }
-
-  // Convert file to Base64
-  const getBase64 = (file: File) => {
-    return new Promise<string>((resolve, reject) => {
-      const reader = new FileReader()
-      reader.onloadend = () => resolve(reader.result as string)
-      reader.onerror = (error) => reject(error)
-      reader.readAsDataURL(file)
-    })
-  }
-
   // Form submission handler
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    if (!formData.selectedFile) {
-      setErrorMessage("Please select a file to upload.")
-      return
-    }
-
-    // Convert the selected file to Base64
-    const fileBase64 = await getBase64(formData.selectedFile)
-
     // EmailJS service details
     const serviceID = "your_service_id"
     const templateID = "your_template_id"
-    const userID = "your_user_id"
+    const public_Id = "9VMEM3abPPM9o7lOD"
 
     // Prepare the data for EmailJS
     const templateParams = {
       name: formData.name,
-      phone: formData.phone,
       email: formData.email,
-      message: formData.message,
+      phone: formData.phone,
       address: formData.address,
-      file: fileBase64, // Base64 file content
-      fileName: formData.selectedFile.name, // Send file name if necessary
+      profession: formData.profession,
+      willingToJoin: formData.willingToJoin,
     }
 
     // Send the email using EmailJS
-    emailjs.send(serviceID, templateID, templateParams, userID).then(
+    emailjs.send(serviceID, templateID, templateParams, public_Id).then(
       (response) => {
         console.log("Email sent successfully", response)
-        setSuccessMessage("Your details have been submitted successfully!")
+        setSuccessMessage(
+          "Your membership request has been submitted successfully!"
+        )
         setFormData({
           name: "",
-          phone: "",
           email: "",
-          selectedFile: null,
-          message: "",
+          phone: "",
           address: "",
+          profession: "",
+          willingToJoin: "",
         })
         setTimeout(() => setSuccessMessage(""), 3000)
       },
@@ -106,23 +83,23 @@ export default function ContactStyleOne() {
         </header>
         <main className="content">
           <BreadcrumbItem
-            link="Contact us"
+            link="Membership Form"
             img="/images/banner/about.jpg"
-            title="Contact us"
-            desc="Explore our Contact Us page for prompt assistance from our dedicated team."
+            title="Membership Form"
+            desc="Fill out the form below to apply for membership."
           />
           <div className="form-contact style-one lg:py-[100px] sm:py-16 py-10">
             <div className="container flex items-center justify-center">
               <div className="xm:w-5/6 w-full flex max-xl:flex-col xl:items-center gap-y-8">
-                {/* Left Side Section (Address, Phone, Email) */}
+                {/* Left Side Section (Membership Info, Phone, Email, etc.) */}
                 <div className="w-full xl:w-2/5 xl:pr-20">
                   <div className="contact-info bg-gray-50 p-6 rounded-lg shadow-2xl">
                     <div className="heading mb-6">
                       <div className="heading5 text-xl font-semibold">
-                        Contact Info
+                        Our Contact Info
                       </div>
                       <div className="body3 text-secondary mt-2 text-sm">
-                        Get in touch with us for more information.
+                        Apply for membership and join our community today.
                       </div>
                     </div>
                     <ul className="list-none space-y-6">
@@ -171,12 +148,10 @@ export default function ContactStyleOne() {
                   >
                     <div className="heading mb-6">
                       <div className="heading5 text-xl font-semibold">
-                        Your Rights Matter
+                        Apply for Membership
                       </div>
                       <div className="body3 text-secondary mt-2 text-sm">
-                        We are here to support you in asserting and protecting
-                        your rights. Reach out to us for expert guidance and
-                        assistance within 24 hours.
+                        Fill out the details below to become a member.
                       </div>
                     </div>
 
@@ -216,15 +191,6 @@ export default function ContactStyleOne() {
                       </div>
                       <div className="col-span-2">
                         <input
-                          type="file"
-                          name="selectedFile"
-                          className="w-full bg-surface text-secondary caption1 pl-3 py-3 rounded-lg"
-                          onChange={handleFileChange}
-                          required
-                        />
-                      </div>
-                      <div className="col-span-2 w-full">
-                        <input
                           name="address"
                           className="w-full bg-surface text-secondary caption1 px-4 py-3 rounded-lg"
                           type="text"
@@ -234,18 +200,42 @@ export default function ContactStyleOne() {
                           required
                         />
                       </div>
-                      <div className="col-span-2 w-full">
-                        <textarea
-                          name="message"
+                      <div className="col-span-2">
+                        <input
+                          name="profession"
                           className="w-full bg-surface text-secondary caption1 px-4 py-3 rounded-lg"
-                          rows={4}
-                          placeholder="Type your Case"
-                          value={formData.message}
+                          type="text"
+                          placeholder="Your Profession"
+                          value={formData.profession}
                           onChange={handleChange}
                           required
-                        ></textarea>
+                        />
+                      </div>
+                      <div className="col-span-2">
+                        <div className="flex items-center gap-3">
+                          <label className="text-sm">
+                            Are you willing to join?
+                          </label>
+                          <input
+                            type="radio"
+                            name="willingToJoin"
+                            value="yes"
+                            checked={formData.willingToJoin === "yes"}
+                            onChange={handleChange}
+                          />
+                          <label>Yes</label>
+                          <input
+                            type="radio"
+                            name="willingToJoin"
+                            value="no"
+                            checked={formData.willingToJoin === "no"}
+                            onChange={handleChange}
+                          />
+                          <label>No</label>
+                        </div>
                       </div>
                     </div>
+
                     <div className="button-block">
                       <button
                         type="submit"
@@ -256,9 +246,10 @@ export default function ContactStyleOne() {
                         onMouseEnter={() => setIsHovered(true)}
                         onMouseLeave={() => setIsHovered(false)}
                       >
-                        Submit request
+                        Submit Request
                       </button>
                     </div>
+
                     {successMessage && (
                       <div style={{ color: "green" }} className="mt-2">
                         {successMessage}

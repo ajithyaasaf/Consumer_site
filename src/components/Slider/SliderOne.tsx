@@ -40,10 +40,10 @@ const SliderOne = () => {
                     height={3000}
                     alt="bgslider"
                     priority={true}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover "
                   />
                   {/* Black overlay */}
-                  <div className="absolute inset-0 bg-black opacity-50"></div>
+                  <div className="absolute inset-0 bg-grey opacity-60"></div>
                 </div>
 
                 <div className="container">

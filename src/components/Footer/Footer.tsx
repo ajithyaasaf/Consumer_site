@@ -14,7 +14,7 @@ const Footer = () => {
                 <Image
                   width={60} // Reduced width
                   height={60} // Reduced height
-                  className="footer-logo w-[65px]"
+                  className="footer-logo w-[80px]"
                   src="/images/Logo2.png"
                   alt="Logo"
                 />

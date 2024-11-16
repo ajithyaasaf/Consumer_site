@@ -17,7 +17,27 @@
   --yellow: #f2c94c;
   --line: rgba(0, 0, 0, 0.1);
 }
+/* styles/globals.css */
 
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 1.5s infinite;
+  background-color: #c2b115;
+  background-size: contain; /* Ensures the icon scales within the element */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: center; /* Centers the icon */
+  border-radius: 20px;
+  border-style: dashed;
+}
 /* Reset */
 * {
   padding: 0;
