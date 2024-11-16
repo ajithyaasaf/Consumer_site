@@ -45,18 +45,19 @@ const LayoutListOne = () => {
   })
 
   if (filteredData.length === 0) {
-    filteredData = [{
+    filteredData = [ {
       id: -1,
-      category: "no-data",
-      tag: "no-data",
-      title: "no-data",
-      date: "no-data",
-      author: "no-data",
-      avatar: "no-data",
-      img: "",
-      desc: "no-data",
+      category: 'no-data',
+      tag: 'no-data',
+      title: 'No blogs available',
+      date: 'N/A',
+      author: 'N/A',
+      avatar: '/images/no-avatar.png', // A fallback avatar image
+      img: '/images/no-image.png', // A fallback blog image
+      desc: 'No blogs match the selected criteria.',
       listImg: [],
-    }];
+      url: '#', // A fallback URL
+    },];
   }
 
   const pageCount = Math.ceil(filteredData.length / productsPerPage);
