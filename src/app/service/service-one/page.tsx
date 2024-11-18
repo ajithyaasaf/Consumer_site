@@ -22,7 +22,7 @@ export default function HistoryPage() {
           {/* Breadcrumb */}
           <BreadcrumbItem
             link="History of the Consumer Protection Act"
-            img="/images/banner/services.jpg"
+            img="/images/bannerimage3.jpg"
             title="History of the Consumer Protection Act"
             desc="Learn about the important legislation that protects consumers in India."
           />

@@ -14,15 +14,17 @@ const BallAnimation: React.FC = () => {
     <>
       <div
         onClick={toggleFormVisibility}
-        className="fixed bottom-8 right-8 w-16 h-16 rounded-full bg-blue-500 shadow-lg hover:bg-blue-600 cursor-pointer z-50 animate-bounce transition-all duration-200 ease-in-out flex items-center justify-center"
+        className="fixed bottom-8 right-8 w-20 h-20 rounded-full bg-blue-500 shadow-lg hover:bg-blue-600 cursor-pointer z-50 animate-bounce transition-all duration-200 ease-in-out flex items-center justify-center"
       >
-        {/* Black dot in the center of the ball */}
-        <div className="w-4 h-4 bg-black rounded-full"></div>
+        {/* Text inside the ball */}
+        <div className="text-black text-sm font-semibold text-center px-2">
+          File Complaint
+        </div>
       </div>
 
       {isFormVisible && (
         <div className="fixed inset-0 flex items-center justify-center z-50 bg-opacity-50 bg-black">
-          <div className="relative bg-white rounded-lg p-6 shadow-lg w-full max-w-md">
+          <div className="relative bg-white rounded-lg p-6 shadow-lg w-full max-w-md top-4">
             <button
               onClick={toggleFormVisibility}
               className="absolute top-3 right-3 text-gray-600 hover:text-gray-800"

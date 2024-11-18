@@ -43,12 +43,12 @@ const SliderOne = () => {
                     className="w-full h-full object-cover "
                   />
                   {/* Black overlay */}
-                  <div className="absolute inset-0 bg-grey opacity-60"></div>
+                  {/* <div className="absolute inset-0 bg-grey"></div> */}
                 </div>
 
                 <div className="container">
                   <div className="text-content flex-columns-between">
-                    <div className="heading2 text-black font-bold">
+                    <div className="heading2 text-white font-bold">
                       <div className="relative overflow-hidden">
                         <span className="block relative overflow-hidden">
                           Empower and Protect
@@ -66,15 +66,15 @@ const SliderOne = () => {
                         </span>
                       </div>
                       <div className="relative overflow-hidden">
-                        <span className="text-[#0597fc] block relative overflow-hidden">
+                        <span className="text-white block relative overflow-hidden">
                           Our Platform
                         </span>
-                        <span className="text-[#0597fc] block absolute top-0 left-0 w-full h-full">
+                        <span className="text-white block absolute top-0 left-0 w-full h-full">
                           Our Platform
                         </span>
                       </div>
                     </div>
-                    <div className="body2 mt-3 text-black font-bold">
+                    <div className="body2 mt-3 text-white font-bold">
                       Our platform helps consumers understand and assert their
                       rights
                       <br />

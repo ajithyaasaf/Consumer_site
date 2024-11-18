@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react"
 import { usePathname } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
-import * as Icon from "@phosphor-icons/react/dist/ssr"
+import * as Icon from "@phosphor-icons/react"
 
 const MenuOne = () => {
   const pathname = usePathname()
