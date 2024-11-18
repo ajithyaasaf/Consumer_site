@@ -24,7 +24,7 @@ const TopNavOne = () => {
           </div>
           <div className="right-block flex items-center gap-5">
             <div className="line h-6 w-px bg-grey max-sm:hidden"> </div>
-            <div className="select-block relative">
+            {/*     <div className="select-block relative">
               <select className="border-none outline-none bg-dark text-white p-2 caption2">
                 <option value="English">English</option>
                 <option value="France">Tamil</option>
@@ -33,7 +33,7 @@ const TopNavOne = () => {
                 weight="bold"
                 className="text-xs text-white icon -right-2"
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

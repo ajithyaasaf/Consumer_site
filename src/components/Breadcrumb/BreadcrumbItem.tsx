@@ -13,26 +13,32 @@ interface Props {
 const BreadcrumbItem: React.FC<Props> = ({ link, img, title, desc }) => {
   return (
     <div className="breadcrumb-block w-full lg:h-[400px] sm:h-[360px] h-[320px] relative">
+      {/* Background Image */}
       <div className="bg-img w-full h-full absolute top-0 left-0 z-[-1]">
         <Image
           src={img}
           width={4000}
           height={3000}
           alt="banner"
-          className="w-full h-full object-cover opacity-50 blur-sm"
+          className="w-full h-full object-cover"
         />
-        {/* Overlay div */}
-        <div className="overlay absolute top-0 left-0 w-full h-full bg-[#173363] opacity-40"></div>
+        {/* Full-screen overlay */}
+        <div className="overlay absolute inset-0 w-[1999px] bg-[#0a1b35] opacity-85 blur-sm"></div>
       </div>
-      <div className="container relative h-full flex items-center">
-        <div className="heading-nav flex items-center gap-1 absolute top-8 left-4 py-1.5 px-4 rounded-full bg-line">
+
+      {/* Content Container */}
+      <div className="container relative h-full flex items-center px-4">
+        {/* Breadcrumb Navigation */}
+        <div className="heading-nav flex items-center gap-1 absolute top-8 left-4 py-1.5 px-4 rounded-full bg-line z-10">
           <Link className="hover:underline caption1 text-white" href="/">
             Home
           </Link>
           <Icon.CaretDoubleRight className="text-white" />
           <div className="caption1 text-white">{link}</div>
         </div>
-        <div className="text-nav xl:w-1/2 md:w-3/5">
+
+        {/* Title and Description */}
+        <div className="text-nav xl:w-1/2 md:w-3/5 z-10">
           <div className="heading3 text-white">{title}</div>
           <div className="sub-heading mt-4 text-white font-normal">{desc}</div>
         </div>
@@ -40,4 +46,5 @@ const BreadcrumbItem: React.FC<Props> = ({ link, img, title, desc }) => {
     </div>
   )
 }
+
 export default BreadcrumbItem

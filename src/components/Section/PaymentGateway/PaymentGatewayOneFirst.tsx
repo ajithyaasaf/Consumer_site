@@ -61,9 +61,9 @@ const PaymentGatewayOneFirst = () => {
               <div className="relative">
                 <Link
                   className="button-main box-shadow hover:bg-black hover:text-white text-on-surface bg-white flex items-center gap-2 rounded-full relative z-[1]"
-                  href="/contact-two"
+                  href="/contact/contact-one"
                 >
-                  <span className="whitespace-nowrap">(00) 123 456 789</span>
+                  <span className="whitespace-nowrap">(+91) 93 44 10 8771</span>
                 </Link>
               </div>
             </div>

@@ -85,7 +85,7 @@ export default function MembershipForm() {
         <main className="content">
           <BreadcrumbItem
             link="Membership Form"
-            img="/images/bannerimage3.jpg"
+            img="/images/banner4.jpg"
             title="Membership Form"
             desc="Fill out the form below to apply for membership."
           />

@@ -6,6 +6,8 @@ import SliderOne from "@/components/Slider/SliderOne"
 import PaymentGatewayOneFirst from "@/components/Section/PaymentGateway/PaymentGatewayOneFirst"
 import Footer from "@/components/Footer/Footer"
 import BallAnimation from "@/components/BallAnimation"
+import serviceData from "@/data/service.json"
+import ServiceOne from "@/components/Section/Service/ServiceOne"
 
 export default function Home() {
   return (
@@ -20,6 +22,9 @@ export default function Home() {
           <div className="my-16 bg-gray-100">
             <PaymentGatewayOneFirst />
           </div>
+
+          <ServiceOne data={serviceData} />
+
           <footer id="footer">
             <Footer />
           </footer>

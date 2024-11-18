@@ -1,228 +1,151 @@
-"use client" // This line enables client-side rendering for this component
+// ServiceItem.tsx
+"use client"
 
 import React, { useState } from "react"
-import { ServiceType } from "@/type/ServiceType"
-import LoanFormModal from "@/components/Service/LoanFormModal" // Adjust the import path as needed
-import * as Icon from "@phosphor-icons/react/dist/ssr"
+import * as Icon from "@phosphor-icons/react" // Import necessary icons
+import { ServiceType } from "@/type/ServiceType" // Import ServiceType
 
-// Icons for loan types
-import {
-  House,
-  Briefcase,
-  Wallet,
-  Car,
-  User,
-  Plus,
-  Bank, // Added Bank icon for Mortgage Loan
-} from "@phosphor-icons/react"
-
-// Define the interface for props
 interface Props {
-  data: ServiceType
+  data: ServiceType // Data for each right
   style: string
   number: number
 }
 
+// Define the keys of the icon mapping explicitly
+type IconMappingKeys =
+  | "Right to Safety"
+  | "Right to be Informed"
+  | "Right to Choose"
+  | "Right to be Heard"
+  | "Right to Seek Redressal"
+  | "Right to Consumer Education"
+
 const ServiceItem: React.FC<Props> = ({ data, style, number }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false)
-
-  const handleOpenModal = () => {
-    setIsModalOpen(true)
+  // Icons for each right (customizable for each "Right")
+  const iconMapping: Record<IconMappingKeys, React.JSX.Element> = {
+    "Right to Safety": (
+      <Icon.ShieldCheck size={50} className="text-[#000000]" />
+    ),
+    "Right to be Informed": <Icon.Info size={50} className="text-[#000000]" />,
+    "Right to Choose": (
+      <Icon.ArrowElbowDownLeft size={50} className="text-[#000000]" />
+    ),
+    "Right to be Heard": (
+      <Icon.Megaphone size={50} className="text-[#000000]" />
+    ),
+    "Right to Seek Redressal": (
+      <Icon.FileText size={50} className="text-[#000000]" />
+    ),
+    "Right to Consumer Education": (
+      <Icon.BookOpen size={50} className="text-[#000000]" />
+    ),
   }
 
-  const handleCloseModal = () => {
-    setIsModalOpen(false)
+  // Additional content based on the title of the right
+  const additionalContent = {
+    "Right to Safety": (
+      <>
+        <p>
+          The Right to Safety ensures that consumers are protected from goods
+          and services that are hazardous to health or life.
+        </p>
+        <p className="mt-4">
+          This right empowers consumers to demand safe products and practices,
+          and to seek compensation for any harm caused by unsafe products.
+        </p>
+      </>
+    ),
+    "Right to be Informed": (
+      <>
+        <p>
+          The Right to be Informed ensures that consumers are given accurate and
+          truthful information about products or services before making a
+          purchase.
+        </p>
+        <p className="mt-4">
+          This right protects consumers from deceptive practices and helps them
+          make informed choices about the products and services they purchase.
+        </p>
+      </>
+    ),
+    "Right to Choose": (
+      <>
+        <p>
+          The Right to Choose allows consumers to select from a variety of
+          products and services at competitive prices.
+        </p>
+        <p className="mt-4">
+          This right encourages healthy competition and prevents monopolies,
+          ensuring consumers have access to multiple options.
+        </p>
+      </>
+    ),
+    "Right to be Heard": (
+      <>
+        <p>
+          The Right to be Heard ensures that consumers' concerns and complaints
+          are taken into account by businesses, authorities, and other
+          decision-makers.
+        </p>
+        <p className="mt-4">
+          This right gives consumers a voice, promoting fair treatment and the
+          opportunity to advocate for their needs.
+        </p>
+      </>
+    ),
+    "Right to Seek Redressal": (
+      <>
+        <p>
+          The Right to Seek Redressal provides consumers with the ability to
+          seek compensation for goods or services that do not meet quality
+          standards.
+        </p>
+        <p className="mt-4">
+          This right allows consumers to take legal action if they are wronged
+          and ensures accountability for businesses.
+        </p>
+      </>
+    ),
+    "Right to Consumer Education": (
+      <>
+        <p>
+          The Right to Consumer Education empowers individuals with the
+          knowledge and skills they need to make informed decisions and to
+          understand their rights.
+        </p>
+        <p className="mt-4">
+          It helps consumers understand how markets function, their role in the
+          economy, and how to protect their interests.
+        </p>
+      </>
+    ),
   }
 
-  // Set up an object mapping for icons based on loan type
-  const iconMapping: Record<string, React.JSX.Element> = {
-    "Home Loan": <House size={40} className="text-[#49befb]" />,
-    "Business Loan": <Briefcase size={40} className="text-[#49befb]" />,
-    "Personal Loan": <Wallet size={40} className="text-[#49befb]" />,
-    "Vehicle Loan": <Car size={40} className="text-[#49befb]" />,
-    "Mortgage Loan": <Bank size={40} className="text-[#49befb]" />, // Changed to Bank icon
-    "NRI Loan": <User size={40} className="text-[#49befb]" />,
-    "BT + Topup": <Plus size={40} className="text-[#49befb]" />,
-  }
-
-  // Type guard to ensure data.title is a valid key of iconMapping
-  const isValidTitle = (title: string): title is keyof typeof iconMapping => {
-    return title in iconMapping
-  }
+  // Since data.title is one of the above keys, we can safely index into iconMapping
+  const icon = iconMapping[data.title as IconMappingKeys] || (
+    <Icon.Question size={50} className="text-[#152152]" />
+  )
 
   return (
-    <>
-      {style === "style-one" && (
-        <div
-          onClick={handleOpenModal}
-          className="service-item p-8 bg-white rounded-lg border border-line hover-box-shadow cursor-pointer"
-        >
-          <div className="service-item-main h-full cursor-default">
-            <div className="heading flex items-center justify-between">
-              {/* Use the type guard to ensure valid key */}
-              {isValidTitle(data.title) ? (
-                iconMapping[data.title]
-              ) : (
-                <House size={40} className="text-[#152152]" />
-              )}
-              <div className="number heading3 text-placehover">
-                {number + 1}
-              </div>
-            </div>
-            <div className="heading6 hover:text-blue duration-300 mt-6">
-              {data.title}
-            </div>
-            <div className="text-secondary mt-2">{data.desc}</div>
-          </div>
+    <div className="service-item p-8 bg-white rounded-lg shadow-md hover:shadow-xl cursor-pointer">
+      <div className="flex items-center gap-6">
+        {/* Render icon based on title */}
+        <div className="icon-container text-[#49befb]">{icon}</div>
+        <div className="heading-container flex-1">
+          <h4 className="text-2xl font-semibold text-[#152152]">
+            {data.title}
+          </h4>
         </div>
-      )}
+      </div>
+      <p className="text-lg text-[#333] mt-6">{data.desc}</p>
 
-      {style === "style-two" && (
-        <div
-          onClick={handleOpenModal}
-          className="service-item py-7 px-6 bg-white rounded-lg border border-line box-shadow-sm hover-box-shadow cursor-pointer"
-        >
-          <div className="service-item-main flex items-center gap-8 h-full cursor-default">
-            <div className="icon">
-              {/* Use the type guard to ensure valid key */}
-              {isValidTitle(data.title) ? (
-                iconMapping[data.title]
-              ) : (
-                <House size={40} className="text-[#152152]" />
-              )}
-            </div>
-            <div className="infor">
-              <div className="heading7 hover:text-blue duration-300">
-                {data.title}
-              </div>
-              <div className="text-secondary mt-2">{data.shortDesc}</div>
-              <div className="read-more flex items-center gap-1 mt-2">
-                <div className="text-button-sm">Explore</div>
-                <Icon.CaretRight
-                  weight="bold"
-                  className="text-blue text-sm duration-300"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {style === "style-three" && (
-        <div
-          onClick={handleOpenModal}
-          className="service-item px-8 py-10 bg-white rounded-lg cursor-pointer"
-        >
-          <div className="service-item-main flex flex-col items-center h-full cursor-default">
-            <i
-              className={`${data.icon} text-gradient md:text-6xl text-5xl`}
-            ></i>
-            <div className="heading7 text-center hover:text-gradient duration-300 mt-6">
-              {data.title}
-            </div>
-            <div className="caption1 text-secondary text-center mt-1.5">
-              {data.desc}
-            </div>
-          </div>
-        </div>
-      )}
-
-      {style === "style-four" && (
-        <div
-          onClick={handleOpenModal}
-          className="service-item p-8 bg-white rounded-lg border border-line hover-box-shadow cursor-pointer"
-        >
-          <div className="service-item-main h-full cursor-default">
-            <i className={`${data.icon} text-black md:text-6xl text-5xl`}></i>
-            <div className="heading7 hover:text-success duration-300 mt-6">
-              {data.title}
-            </div>
-            <div className="text-secondary mt-2">{data.desc}</div>
-          </div>
-        </div>
-      )}
-
-      {style === "style-five" && (
-        <div
-          onClick={handleOpenModal}
-          className="service-item p-8 bg-white rounded-lg border border-line hover-box-shadow cursor-pointer"
-        >
-          <div className="service-item-main h-full cursor-default">
-            <div className="heading flex items-center justify-between">
-              <i
-                className={`${data.icon} text-[#152152] md:text-6xl text-5xl`}
-              ></i>
-              <div className="number heading3 text-placehover">
-                {number + 1}
-              </div>
-            </div>
-            <div className="heading7 hover:text-blue duration-300 mt-6">
-              {data.title}
-            </div>
-            <div className="text-secondary mt-2">{data.desc}</div>
-          </div>
-        </div>
-      )}
-
-      {style === "style-six" && (
-        <div className="service-item rounded-2xl border border-line hover-box-shadow">
-          <div className="service-item-main block h-full px-8 pb-7 md:pt-14 pt-10 cursor-default">
-            <div className="icon md:w-[100px] w-20 md:h-[100px] h-20 flex items-center justify-center rounded-2xl">
-              <i className={`${data.icon} text-white md:text-5xl text-4xl`}></i>
-            </div>
-            <div className="heading7 text-white hover:text-orange duration-300 mt-6">
-              {data.title}
-            </div>
-            <div className="text-placehover mt-3">{data.desc}</div>
-          </div>
-        </div>
-      )}
-
-      {style === "style-about" && (
-        <div
-          onClick={handleOpenModal}
-          className="service-item py-8 px-7 bg-white rounded-lg hover-box-shadow cursor-pointer"
-        >
-          <div className="service-item-main flex flex-col justify-between h-full cursor-default">
-            <div className="heading flex items-center gap-4">
-              <i
-                className={`${data.icon} text-[#152152] md:text-5xl text-4xl`}
-              ></i>
-              <div className="heading7 hover:text-blue duration-300">
-                {data.title}
-              </div>
-            </div>
-            <div className="text-secondary mt-4">{data.desc}</div>
-          </div>
-        </div>
-      )}
-
-      {style === "style-about-two" && (
-        <div
-          onClick={handleOpenModal}
-          className="service-item px-4 bg-white rounded-lg cursor-pointer"
-        >
-          <div className="service-item-main flex flex-col items-center h-full cursor-default">
-            <i
-              className={`${data.icon} text-[#152152] md:text-6xl text-5xl`}
-            ></i>
-            <div className="heading7 text-center hover:text-blue duration-300 mt-6">
-              {data.title}
-            </div>
-            <div className="caption1 text-secondary text-center mt-1.5">
-              {data.desc}
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Modal component */}
-      <LoanFormModal
-        isOpen={isModalOpen}
-        onClose={handleCloseModal}
-        loanType={data.title} // Pass the loan type to the modal
-      />
-    </>
+      {/* Add relevant additional content */}
+      <div className="additional-content mt-8 text-lg text-[#555]">
+        {additionalContent[data.title as IconMappingKeys] || (
+          <p>More details on this right coming soon...</p>
+        )}
+      </div>
+    </div>
   )
 }
 

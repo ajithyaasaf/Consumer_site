@@ -14,11 +14,11 @@ const BallAnimation: React.FC = () => {
     <>
       <div
         onClick={toggleFormVisibility}
-        className="fixed bottom-8 right-8 w-20 h-20 rounded-full bg-blue-500 shadow-lg hover:bg-blue-600 cursor-pointer z-50 animate-bounce transition-all duration-200 ease-in-out flex items-center justify-center"
+        className="fixed bottom-8 right-8 w-24 h-24 rounded-full bg-blue-500 shadow-lg hover:bg-blue-600 cursor-pointer z-50 animate-bounce transition-all duration-200 ease-in-out flex items-center justify-center"
       >
         {/* Text inside the ball */}
         <div className="text-black text-sm font-semibold text-center px-2">
-          File Complaint
+          File a Complaint
         </div>
       </div>
 

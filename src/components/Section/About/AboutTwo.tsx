@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import Link from "next/link"
 import * as Icon from "@phosphor-icons/react/dist/ssr"
 
 const AboutTwo = () => {
@@ -19,13 +18,15 @@ const AboutTwo = () => {
         <div className="row flex flex-col lg:flex-row gap-6">
           {/* Left side logo, right side content */}
           <div className="w-full lg:w-1/2">
-            <div className="bg-img w-full overflow-hidden rounded-3xl">
+            <div
+              className="image-container w-full overflow-hidden rounded-3xl relative"
+              style={{ height: "500px" }}
+            >
               <Image
                 src="/images/Logo3.jpg"
-                width={4000}
-                height={4000}
                 alt="TNCCPC LOGO"
-                className="w-full h-full block"
+                layout="fill" // Ensures the image fills the container
+                objectFit="cover" // Ensures the image covers the div area without stretching
               />
             </div>
           </div>
@@ -76,8 +77,7 @@ const AboutTwo = () => {
         <div className="row flex flex-col lg:flex-row gap-6 mt-16">
           <div className="w-full lg:w-1/2 flex flex-col">
             <h2 className="text-3xl font-semibold">
-              {" "}
-              Tamil Nadu Citizen Consumer Protection Centre (TNCCPC){" "}
+              Tamil Nadu Citizen Consumer Protection Centre (TNCCPC)
             </h2>
             <p className="mt-4 text-lg">
               The mission of the Government of Tamil Nadu is to empower all
@@ -124,13 +124,15 @@ const AboutTwo = () => {
           </div>
           {/* Section 2 Image: Hidden on mobile (sm and below), visible on large screens (lg) */}
           <div className="w-full lg:w-1/2 hidden lg:block">
-            <div className="bg-img w-full overflow-hidden rounded-3xl">
+            <div
+              className="image-container w-full overflow-hidden rounded-3xl relative"
+              style={{ height: "500px" }}
+            >
               <Image
                 src="/images/about1.jpg"
-                width={4000}
-                height={4000}
                 alt="TNCCPC"
-                className="w-full h-full block"
+                layout="fill" // Ensures the image fills the container
+                objectFit="cover" // Ensures the image covers the div area without stretching
               />
             </div>
           </div>
@@ -139,13 +141,15 @@ const AboutTwo = () => {
         {/* Section 3: Left image, right content */}
         <div className="row flex flex-col lg:flex-row gap-6 mt-16">
           <div className="w-full lg:w-1/2">
-            <div className="bg-img w-full overflow-hidden rounded-3xl">
+            <div
+              className="image-container w-full overflow-hidden rounded-3xl relative"
+              style={{ height: "500px" }}
+            >
               <Image
                 src="/images/about2.jpg"
-                width={4000}
-                height={4000}
                 alt="Consumer Rights"
-                className="w-full h-full block"
+                layout="fill" // Ensures the image fills the container
+                objectFit="cover" // Ensures the image covers the div area without stretching
               />
             </div>
           </div>

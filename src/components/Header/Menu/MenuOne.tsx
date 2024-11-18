@@ -67,13 +67,17 @@ const MenuOne = () => {
             </Link>
             {/* Tamil Text (Visible on Mobile) */}
             <span className="text-sm font-medium text-gray-700 md:hidden">
-              தமிழ்நாடு குடிமக்கள் நுகர்வோர் பாதுகாப்பு மையம்
+              <span>தமிழ்நாடு குடிமக்கள்</span> <br />
+              <span>நுகர்வோர் பாதுகாப்பு மையம்</span>
             </span>
           </div>
 
           {/* Center Block: Tamil Text (Hidden on Mobile) */}
-          <div className="flex-1 text-center text-sm font-medium text-gray-700 hidden md:block">
-            <span>தமிழ்நாடு குடிமக்கள் நுகர்வோர் பாதுகாப்பு மையம்</span>
+          <div className="flex-1 text-start text-sm font-medium text-gray-700 hidden md:block">
+            <span>
+              தமிழ்நாடு குடிமக்கள்
+              <br /> நுகர்வோர் பாதுகாப்பு மையம்
+            </span>
           </div>
 
           {/* Mobile Menu Hamburger Icon (Visible on Mobile) */}

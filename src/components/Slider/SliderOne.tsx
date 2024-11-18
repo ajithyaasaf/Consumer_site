@@ -20,7 +20,7 @@ const SliderOne = () => {
     <>
       <div className="slider-block style-one">
         {/* Removed left and right arrow navigation */}
-        <div className="slider-main">
+        <div className="slider-main h-[600px] md:h-[600px] lg:h-[730px]">
           <Swiper
             spaceBetween={0}
             slidesPerView={1}
@@ -33,17 +33,17 @@ const SliderOne = () => {
             {/* First Slide */}
             <SwiperSlide>
               <div className="slider-item slider-first">
-                <div className="bg-img relative">
+                <div className="bg-img relative h-full">
                   <Image
                     src="/images/slider/Home_Banner_1.jpg"
                     width={4000}
                     height={3000}
                     alt="bgslider"
                     priority={true}
-                    className="w-full h-full object-cover "
+                    className="w-full h-full object-cover"
                   />
-                  {/* Black overlay */}
-                  {/* <div className="absolute inset-0 bg-grey"></div> */}
+                  {/* Image Overlay: Mobile version has a lower opacity than desktop */}
+                  <div className="absolute inset-0 bg-dark bg-opacity-50 md:bg-opacity-30"></div>
                 </div>
 
                 <div className="container">
@@ -92,7 +92,7 @@ const SliderOne = () => {
                         onMouseLeave={() => setHovered(false)}
                         href="/service/service-one"
                       >
-                        Discover More
+                        Know More
                       </Link>
                     </div>
                   </div>
