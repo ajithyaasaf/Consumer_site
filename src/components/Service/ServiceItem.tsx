@@ -82,9 +82,9 @@ const ServiceItem: React.FC<Props> = ({ data, style, number }) => {
     "Right to be Heard": (
       <>
         <p>
-          The Right to be Heard ensures that consumers' concerns and complaints
-          are taken into account by businesses, authorities, and other
-          decision-makers.
+          The Right to be Heard ensures that consumers&apos; concerns and
+          complaints are taken into account by businesses, authorities, and
+          other decision-makers.
         </p>
         <p className="mt-4">
           This right gives consumers a voice, promoting fair treatment and the
