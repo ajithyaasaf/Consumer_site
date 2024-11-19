@@ -23,7 +23,7 @@ const BreadcrumbItem: React.FC<Props> = ({ link, img, title, desc }) => {
           className="w-full h-full object-cover"
         />
         {/* Full-screen overlay */}
-        <div className="overlay absolute inset-0 w-[1999px] bg-[#0a1b35] opacity-85 blur-sm"></div>
+        <div className="overlay absolute inset-0 w-[1999px]  blur-sm"></div>
       </div>
 
       {/* Content Container */}

@@ -59,7 +59,7 @@ const AboutTwo = () => {
                     education and resources that enable consumers to make
                     informed decisions.
                   </p>
-                  <h3 className="mt-4">Our Mission</h3>
+                  <h3 className="mt-4 heading7">Our Mission</h3>
                   <p>
                     Our mission is to ensure that every consumer in Tamil Nadu
                     is aware of their rights and can exercise them effectively.
