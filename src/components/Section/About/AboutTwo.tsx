@@ -39,8 +39,6 @@ const AboutTwo = () => {
                     className={`text-button-sm has-line-before line-2px line-blue cursor-pointer capitalize ${
                       tabActive === item ? "active" : ""
                     }`}
-                    key={index}
-                    onClick={() => handleTabActive(item)}
                   >
                     {item}
                   </div>
