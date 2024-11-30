@@ -77,11 +77,8 @@ const Footer = () => {
                   {t("contactUs")}
                 </div>
                 <div className="mt-3 text-surface">
-                  {t("contactUs") === "எங்களைத் தொடர்புகொள்ளுங்கள்" ? (
-                    <div>{t("contactAddress")}</div>
-                  ) : (
-                    <div>{t("contactAddress")}</div>
-                  )}
+                  {/* Display phone number above the address */}
+                  <div>{t("contactPhone")}</div> {/* Phone number */}
                 </div>
                 <div className="mt-2 flex items-center">
                   <Icon.MapPin weight="light" className="text-surface" />
