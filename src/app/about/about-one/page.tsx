@@ -11,6 +11,7 @@ export default function AboutStyleOne() {
   const [tabActive, setTabActive] = useState<string>("about us")
   const t = useTranslations("about") // Get the translations for the "about" section
 
+  // Handle tab change when a different tab is clicked
   const handleTabActive = (item: string) => {
     setTabActive(item)
   }
@@ -22,6 +23,7 @@ export default function AboutStyleOne() {
           <TopNavOne />
           <MenuOne />
         </header>
+
         <main className="content">
           {/* Breadcrumb Section */}
           <BreadcrumbItem
@@ -45,7 +47,8 @@ export default function AboutStyleOne() {
                       src="/images/Logo3.jpg"
                       alt={t("logoAlt")} // Translated logo alt text
                       layout="fill"
-                      objectFit="cover"
+                      objectFit="contain" // Ensure the image fits without cropping
+                      className="w-full h-full object-contain"
                     />
                   </div>
                 </div>
@@ -89,9 +92,8 @@ export default function AboutStyleOne() {
               {/* Section 2: Left content, right image */}
               <div className="row flex flex-col lg:flex-row gap-6 mt-16">
                 <div className="w-full lg:w-1/2 flex flex-col">
-                  <h2 className="text-3xl font-semibold">
-                    {t("tnccpcTitle")} {/* Translated title */}
-                  </h2>
+                  <h2 className="text-3xl font-semibold">{t("tnccpcTitle")}</h2>{" "}
+                  {/* Translated title */}
                   <p className="mt-4 text-lg">{t("tnccpcDescription1")}</p>{" "}
                   {/* Translated description */}
                   <p className="mt-4">{t("tnccpcDescription2")}</p>{" "}
@@ -122,6 +124,7 @@ export default function AboutStyleOne() {
                       alt={t("tnccpcImageAlt")} // Translated image alt text
                       layout="fill"
                       objectFit="cover"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                 </div>
@@ -139,6 +142,7 @@ export default function AboutStyleOne() {
                       alt={t("consumerRightsImageAlt")} // Translated image alt text
                       layout="fill"
                       objectFit="cover"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                 </div>
@@ -162,6 +166,7 @@ export default function AboutStyleOne() {
             </div>
           </div>
         </main>
+
         <footer id="footer">
           <Footer />
         </footer>
