@@ -45,8 +45,7 @@ export default function AboutStyleOne() {
                       src="/images/Logo3.jpg"
                       alt={t("logoAlt")} // Translated logo alt text
                       layout="fill"
-                      objectFit="contain" // Ensure the image fits without cropping
-                      className="w-full h-full object-contain" // Adjust object fit for responsiveness
+                      objectFit="cover"
                     />
                   </div>
                 </div>
@@ -123,7 +122,6 @@ export default function AboutStyleOne() {
                       alt={t("tnccpcImageAlt")} // Translated image alt text
                       layout="fill"
                       objectFit="cover"
-                      className="w-full h-full object-cover" // Ensure image cover without distortion
                     />
                   </div>
                 </div>
@@ -141,7 +139,6 @@ export default function AboutStyleOne() {
                       alt={t("consumerRightsImageAlt")} // Translated image alt text
                       layout="fill"
                       objectFit="cover"
-                      className="w-full h-full object-cover" // Ensure image cover without distortion
                     />
                   </div>
                 </div>
