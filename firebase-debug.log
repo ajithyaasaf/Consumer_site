@@ -1,0 +1,129 @@
+[debug] [2024-11-02T10:54:36.854Z] ----------------------------------------------------------------------
+[debug] [2024-11-02T10:54:36.859Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Elroi\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-11-02T10:54:36.860Z] CLI Version:   13.23.1
+[debug] [2024-11-02T10:54:36.860Z] Platform:      win32
+[debug] [2024-11-02T10:54:36.860Z] Node Version:  v20.18.0
+[debug] [2024-11-02T10:54:36.860Z] Time:          Sat Nov 02 2024 16:24:36 GMT+0530 (India Standard Time)
+[debug] [2024-11-02T10:54:36.861Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-11-02T10:54:36.974Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-11-02T10:54:36.974Z] > authorizing via signed-in user (ajithkannan.ag@gmail.com)
+[debug] [2024-11-02T10:54:36.975Z] [iam] checking project jpfinserv-892e1 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-11-02T10:54:36.977Z] Checked if tokens are valid: true, expires at: 1730547005379
+[debug] [2024-11-02T10:54:36.977Z] Checked if tokens are valid: true, expires at: 1730547005379
+[debug] [2024-11-02T10:54:36.978Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/jpfinserv-892e1:testIamPermissions [none]
+[debug] [2024-11-02T10:54:36.979Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/jpfinserv-892e1:testIamPermissions x-goog-quota-user=projects/jpfinserv-892e1
+[debug] [2024-11-02T10:54:36.979Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/jpfinserv-892e1:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-11-02T10:54:38.462Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/jpfinserv-892e1:testIamPermissions 200
+[debug] [2024-11-02T10:54:38.462Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/jpfinserv-892e1:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-11-02T10:54:38.463Z] Checked if tokens are valid: true, expires at: 1730547005379
+[debug] [2024-11-02T10:54:38.463Z] Checked if tokens are valid: true, expires at: 1730547005379
+[debug] [2024-11-02T10:54:38.464Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/jpfinserv-892e1 [none]
+[debug] [2024-11-02T10:54:38.949Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/jpfinserv-892e1 200
+[debug] [2024-11-02T10:54:38.950Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/jpfinserv-892e1 {"projectId":"jpfinserv-892e1","projectNumber":"166323272116","displayName":"JPFinserv","name":"projects/jpfinserv-892e1","resources":{"hostingSite":"jpfinserv-892e1","realtimeDatabaseInstance":"jpfinserv-892e1-default-rtdb"},"state":"ACTIVE","etag":"1_2aaf5cb0-0c84-4a62-9854-87774d2e0fca"}
+[debug] [2024-11-02T10:54:43.045Z] Checked if tokens are valid: true, expires at: 1730547005379
+[debug] [2024-11-02T10:54:43.045Z] Checked if tokens are valid: true, expires at: 1730547005379
+[debug] [2024-11-02T10:54:43.046Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/jpfinserv-892e1/sites pageToken=&pageSize=10
+[debug] [2024-11-02T10:54:44.062Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/jpfinserv-892e1/sites 200
+[debug] [2024-11-02T10:54:44.063Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/jpfinserv-892e1/sites {"sites":[{"name":"projects/jpfinserv-892e1/sites/jpfinserv-892e1","defaultUrl":"https://jpfinserv-892e1.web.app","appId":"1:166323272116:web:f440b4c76307ea463c5ae1","type":"DEFAULT_SITE"}]}
+[debug] [2024-11-02T10:54:44.063Z] Checked if tokens are valid: true, expires at: 1730547005379
+[debug] [2024-11-02T10:54:44.063Z] Checked if tokens are valid: true, expires at: 1730547005379
+[debug] [2024-11-02T10:54:44.063Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:166323272116:web:f440b4c76307ea463c5ae1/config [none]
+[debug] [2024-11-02T10:54:45.553Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:166323272116:web:f440b4c76307ea463c5ae1/config 200
+[debug] [2024-11-02T10:54:45.554Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:166323272116:web:f440b4c76307ea463c5ae1/config {"projectId":"jpfinserv-892e1","appId":"1:166323272116:web:f440b4c76307ea463c5ae1","databaseURL":"https://jpfinserv-892e1-default-rtdb.firebaseio.com","storageBucket":"jpfinserv-892e1.firebasestorage.app","apiKey":"AIzaSyCMOdvQW248_4ul-ciFEEmuOghb4xdS3gs","authDomain":"jpfinserv-892e1.firebaseapp.com","messagingSenderId":"166323272116","measurementId":"G-GBS93JTW1R"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+   The integration is known to work with Next.js version 12 - 14.0. You may encounter errors.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2024-11-02T10:54:55.578Z] Checked if tokens are valid: true, expires at: 1730547005379
+[debug] [2024-11-02T10:54:55.578Z] Checked if tokens are valid: true, expires at: 1730547005379
+[debug] [2024-11-02T10:54:55.579Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/jpfinserv-892e1/sites/jpfinserv-892e1 [none]
+[debug] [2024-11-02T10:54:56.430Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/jpfinserv-892e1/sites/jpfinserv-892e1 200
+[debug] [2024-11-02T10:54:56.430Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/jpfinserv-892e1/sites/jpfinserv-892e1 {"name":"projects/jpfinserv-892e1/sites/jpfinserv-892e1","defaultUrl":"https://jpfinserv-892e1.web.app","appId":"1:166323272116:web:f440b4c76307ea463c5ae1","type":"DEFAULT_SITE"}
+[info]    ▲ Next.js 14.1.0
+
+[info] 
+
+[info]    Creating an optimized production build ...
+
+[info]  ✓ Compiled successfully
+
+[info]    Linting and checking validity of types ...
+
+[info]    Collecting page data ...
+
+[info]    Generating static pages (0/23) ...
+
+[info]    Generating static pages (5/23) 
+
+[info]    Generating static pages (11/23) 
+
+[info]    Generating static pages (17/23) 
+
+[info]  ✓ Generating static pages (23/23) 
+
+[info]    Finalizing page optimization ...
+
+[info]    Collecting build traces ...
+
+[info] 
+
+[info] Route (app)                              Size     First Load JS
+┌ ○ /                                    2.95 kB         129 kB
+├ ○ /_not-found                          882 B          85.2 kB
+├ ○ /about/about-one                     2.9 kB         99.4 kB
+├ ○ /about/about-two                     2.99 kB         127 kB
+├ ○ /case-studies/case-studies-one       3.02 kB         133 kB
+├ ○ /case-studies/case-studies-two       3.03 kB         133 kB
+├ ○ /case-studies/detail                 1.71 kB         126 kB
+├ λ /case-studies/detail/[slug]          1.71 kB         126 kB
+├ ○ /contact/contact-one                 52.4 kB         153 kB
+├ ○ /contact/contact-two                 1.06 kB        97.6 kB
+├ ○ /homepages/home2                     6.39 kB         131 kB
+├ ○ /homepages/home3                     8.44 kB         166 kB
+├ ○ /homepages/home4                     9.51 kB         134 kB
+├ ○ /homepages/home5                     5.71 kB         130 kB
+├ ○ /homepages/home6                     11.4 kB         136 kB
+├ ○ /pages/faqs                          1.9 kB          106 kB
+├ ○ /pages/partners                      4.12 kB         104 kB
+├ ○ /pages/pricing                       5.04 kB         105 kB
+├ ○ /service/service-detail              3.8 kB          108 kB
+├ λ /service/service-detail/[slug]       5.54 kB         109 kB
+├ ○ /service/service-one                 1.06 kB        97.6 kB
+└ ○ /service/service-two                 828 B           133 kB
++ First Load JS shared by all            84.4 kB
+  ├ chunks/69-699d5ab976dcaa95.js        28.9 kB
+  ├ chunks/fd9d1056-8cafb541c07f1aea.js  53.4 kB
+  └ other shared chunks (total)          2.08 kB
+
+
+[info] 
+○  (Static)   prerendered as static content
+λ  (Dynamic)  server-rendered on demand using Node.js
+
+
+[info] Building a Cloud Function to run this application. This is needed due to:
+[info]  • non-static component /case-studies/detail/[slug]/page
+[info]  • non-static component /service/service-detail/[slug]/page
+[info] 
+[debug] [2024-11-02T10:56:13.708Z] Checked if tokens are valid: true, expires at: 1730547005379
+[debug] [2024-11-02T10:56:13.708Z] Checked if tokens are valid: true, expires at: 1730547005379
+[debug] [2024-11-02T10:56:13.709Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/jpfinserv-892e1/sites/jpfinserv-892e1 [none]
+[debug] [2024-11-02T10:56:15.150Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/jpfinserv-892e1/sites/jpfinserv-892e1 200
+[debug] [2024-11-02T10:56:15.150Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/jpfinserv-892e1/sites/jpfinserv-892e1 {"name":"projects/jpfinserv-892e1/sites/jpfinserv-892e1","defaultUrl":"https://jpfinserv-892e1.web.app","appId":"1:166323272116:web:f440b4c76307ea463c5ae1","type":"DEFAULT_SITE"}
+[debug] [2024-11-02T10:56:23.229Z] Error: Command failed: npm i --omit dev --no-audit
+    at genericNodeError (node:internal/errors:984:15)
+    at wrappedFn (node:internal/errors:538:14)
+    at checkExecSyncError (node:child_process:891:11)
+    at execSync (node:child_process:963:15)
+    at prepareFrameworks (C:\Users\Elroi\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\index.js:371:42)
+    at async deploy (C:\Users\Elroi\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:58:13)
+[error] 
+[error] Error: An unexpected error has occurred.

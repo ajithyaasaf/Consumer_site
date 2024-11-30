@@ -1,0 +1,44 @@
+[
+  {
+    "icon": "shield-check",
+    "category": "Safety",
+    "title": "Right to Safety",
+    "desc": "Consumers have the right to be protected against hazardous products.",
+    "shortDesc": "Be protected from unsafe products."
+  },
+  {
+    "icon": "info",
+    "category": "Information",
+    "title": "Right to be Informed",
+    "desc": "Consumers have the right to be informed about the goods and services they purchase.",
+    "shortDesc": "Get informed about products."
+  },
+  {
+    "icon": "arrow-elbow-down-left",
+    "category": "Choice",
+    "title": "Right to Choose",
+    "desc": "Consumers have the right to choose from a variety of goods and services.",
+    "shortDesc": "Choose freely from a variety of goods."
+  },
+  {
+    "icon": "megaphone",
+    "category": "Voice",
+    "title": "Right to be Heard",
+    "desc": "Consumers have the right to have their interests considered in appropriate forums.",
+    "shortDesc": "Make your voice heard."
+  },
+  {
+    "icon": "file-text",
+    "category": "Redressal",
+    "title": "Right to Seek Redressal",
+    "desc": "Consumers have the right to seek redressal against unfair practices.",
+    "shortDesc": "Seek justice for unfair practices."
+  },
+  {
+    "icon": "book-open",
+    "category": "Education",
+    "title": "Right to Consumer Education",
+    "desc": "Consumers have the right to be educated about their consumer rights.",
+    "shortDesc": "Educate yourself about consumer rights."
+  }
+]

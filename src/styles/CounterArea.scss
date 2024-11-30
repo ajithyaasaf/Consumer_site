@@ -1,0 +1,81 @@
+// Define variables for colors and other reusable styles
+$primary-color: #0b57e3;
+$background-color: rgb(255, 255, 255);
+$shadow-color: rgba(207, 207, 207, 0.3);
+$text-color: #303030;
+$secondary-text-color: #777;
+
+.counter-area {
+  margin-top: -120px;
+
+  .container {
+    border-radius: 2px;
+    background-color: $background-color;
+    box-shadow: 0px 8px 46px 4px $shadow-color;
+    position: relative;
+  }
+}
+
+.counter-area2 {
+  margin-bottom: -120px;
+  position: relative;
+  z-index: 1;
+
+  .container {
+    border-radius: 2px;
+    background-color: $background-color;
+    box-shadow: 0px 8px 46px 4px $shadow-color;
+    position: relative;
+  }
+}
+
+.single-counter {
+  i {
+    display: block;
+    width: 80px;
+    height: 80px;
+    background: $primary-color;
+    border-radius: 50%;
+    margin: auto auto 15px;
+    color: #fff;
+    font-size: 40px;
+    line-height: 80px;
+  }
+
+  img {
+    margin-bottom: 30px;
+  }
+
+  p {
+    font-size: 16px;
+    margin-bottom: 0;
+    color: $secondary-text-color;
+  }
+
+  .line {
+    display: inline-block;
+    width: 1px;
+    height: 50px;
+    background: $primary-color;
+    margin-bottom: -5px;
+    margin-top: 10px;
+  }
+}
+
+.count {
+  font-size: 36px;
+  color: $text-color;
+  font-weight: 600;
+  margin-bottom: 10px;
+  line-height: 1;
+  display: inline-block;
+  font-family: "Rubik", sans-serif;
+
+  small {
+    font-size: 36px;
+    font-weight: 500;
+    color: $text-color;
+    line-height: 1;
+    position: relative;
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "address": "10, Kalpalam Road, Koripalayam, Madurai - 625 002",
+  "email": "tnccpctamilnadu2012@gmail.com",
+
+  "menu": {
+    "home": "Home",
+    "about": "About",
+    "caseSuccess": "Case Success Results",
+    "consumerHistory": "Consumer History",
+    "gallery": "Gallery",
+    "awarenessVideos": "Awareness Videos",
+    "membershipForm": "Membership Form"
+  },
+
+  "slider": {
+    "empowerAndProtect": "Empower and Protect",
+    "yourConsumerRightsWith": "Your Consumer Rights with",
+    "ourPlatform": "Our Platform",
+    "platformDescription": "Our platform helps consumers understand and assert their rights in various transactions and services, ensuring a fair experience. We provide the tools to protect your rights and advocate for justice.",
+    "knowMore": "Know More"
+  },
+
+  "paymentGateway": {
+    "coreActivitiesTitle": "TNCCPC’s (Tamil Nadu Citizen Consumer Protection Center) Core Activities",
+    "coreActivitiesDescription": "TNCCPC’s core activities encompass education, research, awareness campaigns, and advocacy. We forge partnerships with grassroots social organizations to bolster public participation, particularly among marginalized and underprivileged communities, in addressing socio-economic concerns, gender equality, and ecological sustainability.",
+    "missionDescription": "Our overarching mission aligns with the Government of Tamil Nadu’s commitment to ensuring equitable transactions in the purchase of goods and services within the state, upholding consumer rights for all."
+  },
+
+  "serviceOne": {
+    "title": "Consumer Rights",
+    "rights": {
+      "Right to Safety": {
+        "title": "Right to Safety",
+        "desc": "The Right to Safety ensures that consumers are protected from goods and services that are hazardous to health or life.",
+        "additional": [
+          "This right empowers consumers to demand safe products and practices.",
+          "It allows seeking compensation for harm caused by unsafe products."
+        ]
+      },
+      "Right to be Informed": {
+        "title": "Right to be Informed",
+        "desc": "Consumers have the right to be informed about the products and services they purchase.",
+        "additional": [
+          "Consumers should have clear and truthful information about products.",
+          "This prevents deceptive marketing and helps consumers make informed decisions."
+        ]
+      },
+      "Right to Choose": {
+        "title": "Right to Choose",
+        "desc": "Consumers have the right to choose from a range of products and services at competitive prices.",
+        "additional": [
+          "This right ensures consumers can make choices without undue influence.",
+          "It protects consumers from monopolies and unfair market practices."
+        ]
+      },
+      "Right to be Heard": {
+        "title": "Right to be Heard",
+        "desc": "Consumers have the right to voice their concerns and have them addressed.",
+        "additional": [
+          "Consumers can lodge complaints with businesses or relevant authorities.",
+          "This right ensures that consumer feedback is taken seriously."
+        ]
+      },
+      "Right to Seek Redressal": {
+        "title": "Right to Seek Redressal",
+        "desc": "Consumers have the right to seek compensation for damages caused by unsafe or faulty products.",
+        "additional": [
+          "This right helps consumers pursue justice when harmed by products or services.",
+          "It ensures that there are mechanisms in place for legal recourse."
+        ]
+      },
+      "Right to Consumer Education": {
+        "title": "Right to Consumer Education",
+        "desc": "Consumers have the right to access information that helps them make informed choices.",
+        "additional": [
+          "This includes information about their rights and how to make safe purchases.",
+          "Consumer education programs help raise awareness about safe practices and product knowledge."
+        ]
+      }
+    }
+  },
+
+  "common": {
+    "noDetails": "More details on this right coming soon..."
+  },
+  "servicecompleted": {
+    "message": "completedddddddddddddddddddddd"
+  },
+
+  "footer": {
+    "companyDescription": "We are committed to empowering consumers with the knowledge, resources, and support they need to protect their rights.",
+    "consumerResources": "Consumer Resources",
+    "aboutUs": "About Us",
+    "caseResults": "Case Results",
+    "gallery": "Gallery",
+    "membershipForm": "MemberShip Form",
+    "contactUs": "Contact Us",
+    "contactAddress": "10, Kalpalam Road, Korippalayam, Madurai - 625 002",
+    "getInTouch": "Get in Touch",
+    "copyright": "©2024 Designed and developed by Godiva Tech. All rights reserved."
+  },
+
+  "about": {
+    "breadcrumbLink": "About Us",
+    "breadcrumbTitle": "About Us",
+    "breadcrumbDesc": "We assess your consumer rights and compare them with industry standards to develop the most effective strategy for your needs.",
+    "logoAlt": "TNCCPC Logo",
+    "aboutUsTitle": "About Us",
+    "aboutDescription": "The Tamil Nadu Citizen Consumer Protection Centre (TNCCPC) was established to empower consumers and promote consumer rights across the state.",
+    "ourMission": "Our Mission",
+    "missionDescription": "Our mission is to ensure that every consumer in Tamil Nadu is aware of their rights and can exercise them effectively.",
+    "tnccpcTitle": "Tamil Nadu Citizen Consumer Protection Centre (TNCCPC)",
+    "tnccpcDescription1": "The mission of the Government of Tamil Nadu is to empower all consumers in the state.",
+    "tnccpcDescription2": "TNCCPC’s core activities encompass education, research, awareness campaigns, and advocacy.",
+    "keyObjectives": "Our Key Objectives",
+    "objective1": "Educating consumers about their rights under the Consumer Protection Act of 1986.",
+    "objective2": "Fostering community collaboration for responsible citizenship.",
+    "objective3": "Equipping consumers with knowledge to effectively address consumer issues.",
+    "objective4": "Establishing Citizen Consumer Clubs, with a special focus on empowering women.",
+    "objective5": "Imparting awareness of product standards, quality, and market dynamics.",
+    "tnccpcClosingDescription": "TNCCPC is dedicated to serving the interests of consumers across Tamil Nadu, empowering them to make informed choices.",
+    "consumerRightsViolations": "Consumer Rights Violations",
+    "consumerRightsDescription1": "Consumer rights violations are prevalent in India, primarily due to a lack of awareness.",
+    "consumerRightsDescription2": "Many consumers, especially in economically disadvantaged areas, remain uninformed about their rights.",
+    "violation1": "Under Weighing: Sellers provide less quantity than paid for.",
+    "violation2": "Adulteration: Products mixed with substandard substances.",
+    "violation3": "Failure to Provide Proper Bills: No valid receipt or bill.",
+    "violation4": "Cheating on Contract Terms: Deception by not adhering to terms.",
+    "violation5": "Price Gouging: Charging more than MRP."
+  },
+
+  "complaintForm": {
+    "title": "File a Complaint",
+    "name": "Full Name",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "complaintType": "Complaint Type",
+    "selectComplaintType": "Select Complaint Type",
+    "productIssue": "Product Issue",
+    "serviceIssue": "Service Issue",
+    "fraudulentActivity": "Fraudulent Activity",
+    "other": "Other",
+    "description": "Complaint Description",
+    "agree": "I agree to the terms and conditions",
+    "submit": "Submit Complaint",
+    "submitting": "Submitting...",
+    "message": {
+      "requiredFields": "Please fill all required fields and agree to the terms.",
+      "submitting": "Submitting...",
+      "success": "Your complaint has been successfully submitted!",
+      "error": "Something went wrong. Please try again later."
+    }
+  },
+  "historyPage": {
+    "breadcrumb": {
+      "link": "History of the Consumer Protection Act",
+      "desc": "Learn about the important legislation that protects consumers in India."
+    },
+    "heading": "The Consumer Protection Act, 1986: A Milestone for Consumers",
+    "content": {
+      "paragraph1": "The Consumer Protection Act, 1986 (hereinafter referred to as the Act) is one of the benevolent social legislations intended to protect the large body of consumers from exploitation. The Act has come as a panacea for consumers all over the country and has assumed the shape of practically the most important legislation enacted in the country during the last few years. It has become the vehicle for enabling people to secure speedy and inexpensive redressal of their grievances.",
+      "paragraph2": "With the enactment of this law, consumers now feel that they are in a position to declare \"sellers beware,\" whereas previously, the consumers were at the receiving end and generally told \"buyers beware.\"",
+      "keyProvisions": "Key Provisions of the Act",
+      "keyProvisionsDesc": "The Act postulates the establishment of the Central Consumer Protection Council and the State Consumer Protection Councils for the purpose of spreading consumer awareness. The Central Council is headed by the Minister-in-charge of Consumer Affairs in the Central Government, while at the State level, it is the Minister-in-charge of Consumer Affairs in the State Government who heads the State Council.",
+      "disputeRedressal": "Consumer Dispute Redressal Mechanism",
+      "disputeRedressalDesc": "To provide cheap, speedy, and simple redressal to consumer disputes, quasi-judicial machinery has been set up at each District, State, and National levels called District Forums, State Consumer Disputes Redressal Commission, and National Consumer Disputes Redressal Commission, respectively.",
+      "cta": "Contact Us"
+    }
+  },
+
+  "awarenessVideos": {
+    "title": "Awareness Videos",
+    "videoTitle": "Awareness Video {index}",
+    "cta": "Watch more informative videos"
+  },
+
+  "contactInfo": {
+    "title": "Our Contact Info",
+    "description": "Apply for membership and join our community today.",
+    "phone": "Phone Number",
+    "email": "Email Address",
+    "address": "Address"
+  },
+  "applyForMembership": {
+    "title": "Apply for Membership",
+    "description": "Fill out the details below to become a member.",
+    "name": "Name",
+    "phone": "Phone No",
+    "email": "Email",
+    "address": "Your Address",
+    "profession": "Your Profession",
+    "willingToJoin": "Are you willing to join?",
+    "yes": "Yes",
+    "no": "No",
+    "submitButton": "Submit Request",
+    "successMessage": "Your membership request has been submitted successfully!",
+    "errorMessage": "Failed to send your message. Please try again."
+  },
+  "complaintFormm": {
+    "fileComplaintText": "File a Complaint"
+  }
+}

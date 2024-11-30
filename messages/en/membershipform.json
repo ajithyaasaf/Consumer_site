@@ -1,0 +1,25 @@
+{
+    "contactInfo": {
+      "title": "Our Contact Info",
+      "description": "Apply for membership and join our community today.",
+      "phone": "Phone Number",
+      "email": "Email Address",
+      "address": "Address"
+    },
+    "applyForMembership": {
+      "title": "Apply for Membership",
+      "description": "Fill out the details below to become a member.",
+      "name": "Name",
+      "phone": "Phone No",
+      "email": "Email",
+      "address": "Your Address",
+      "profession": "Your Profession",
+      "willingToJoin": "Are you willing to join?",
+      "yes": "Yes",
+      "no": "No",
+      "submitButton": "Submit Request",
+      "successMessage": "Your membership request has been submitted successfully!",
+      "errorMessage": "Failed to send your message. Please try again."
+    }
+  }
+  
