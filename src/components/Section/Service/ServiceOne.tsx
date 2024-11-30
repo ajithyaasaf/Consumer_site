@@ -35,39 +35,34 @@ const Service: React.FC<Props> = ({ data }) => {
     ),
   }
 
-  // Additional content based on the title of the right
+  // Default fallback for each "Right" additional content
   const additionalContent: Record<string, React.JSX.Element> = {
     "Right to Safety": (
       <>
-        <p>{t("rights.Right to Safety.desc")}</p>
         <p className="mt-4">{t("rights.Right to Safety.additional.0")}</p>
         <p>{t("rights.Right to Safety.additional.1")}</p>
       </>
     ),
     "Right to be Informed": (
       <>
-        <p>{t("rights.Right to be Informed.desc")}</p>
         <p className="mt-4">{t("rights.Right to be Informed.additional.0")}</p>
         <p>{t("rights.Right to be Informed.additional.1")}</p>
       </>
     ),
     "Right to Choose": (
       <>
-        <p>{t("rights.Right to Choose.desc")}</p>
         <p className="mt-4">{t("rights.Right to Choose.additional.0")}</p>
         <p>{t("rights.Right to Choose.additional.1")}</p>
       </>
     ),
     "Right to be Heard": (
       <>
-        <p>{t("rights.Right to be Heard.desc")}</p>
         <p className="mt-4">{t("rights.Right to be Heard.additional.0")}</p>
         <p>{t("rights.Right to be Heard.additional.1")}</p>
       </>
     ),
     "Right to Seek Redressal": (
       <>
-        <p>{t("rights.Right to Seek Redressal.desc")}</p>
         <p className="mt-4">
           {t("rights.Right to Seek Redressal.additional.0")}
         </p>
@@ -76,13 +71,18 @@ const Service: React.FC<Props> = ({ data }) => {
     ),
     "Right to Consumer Education": (
       <>
-        <p>{t("rights.Right to Consumer Education.desc")}</p>
         <p className="mt-4">
           {t("rights.Right to Consumer Education.additional.0")}
         </p>
         <p>{t("rights.Right to Consumer Education.additional.1")}</p>
       </>
     ),
+  }
+
+  // If the `data` contains `desc` values, we will use them directly.
+  const renderDesc = (title: string) => {
+    const description = t(`rights.${title}.desc`)
+    return description ? <p>{description}</p> : <p>{t("common.noDetails")}</p>
   }
 
   return (
@@ -122,10 +122,13 @@ const Service: React.FC<Props> = ({ data }) => {
                     </h4>
                   </div>
                 </div>
-                <p className="text-lg text-[#333] mt-6">
-                  {t(`rights.${item.title}.desc`)}
-                </p>
 
+                {/* Render description here */}
+                <div className="desc-container mt-4 text-lg text-[#555]">
+                  {renderDesc(item.title)}
+                </div>
+
+                {/* Additional content */}
                 <div className="additional-content mt-8 text-lg text-[#555]">
                   {content}
                 </div>
