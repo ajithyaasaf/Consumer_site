@@ -27,8 +27,14 @@ const BallAnimation: React.FC = () => {
       </div>
 
       {isFormVisible && (
-        <div className="fixed inset-0 flex items-center justify-center z-50 bg-opacity-50 bg-black">
-          <div className="relative bg-white rounded-lg p-6 shadow-lg w-full max-w-md top-4">
+        <div
+          className="fixed inset-0 flex items-center justify-center z-50 bg-opacity-50 bg-black"
+          style={{ zIndex: 10000 }} // Ensure the form is above other content like navbar
+        >
+          <div
+            className="relative bg-white rounded-lg p-6 shadow-lg w-full max-w-md top-4"
+            style={{ zIndex: 10000 }} // Ensure the form content is on top
+          >
             <button
               onClick={toggleFormVisibility}
               className="absolute top-3 right-3 text-gray-600 hover:text-gray-800"
