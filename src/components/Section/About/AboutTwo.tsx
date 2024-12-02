@@ -36,9 +36,11 @@ const AboutTwo = () => {
               <div className="list-nav flex items-center gap-10 border-b border-line w-fit">
                 {["History"].map((item, index) => (
                   <div
+                    key={index} // Added key prop here to avoid the warning/error
                     className={`text-button-sm has-line-before line-2px line-blue cursor-pointer capitalize ${
                       tabActive === item ? "active" : ""
                     }`}
+                    onClick={() => handleTabActive(item)} // Added onClick handler to change active tab
                   >
                     {item}
                   </div>
