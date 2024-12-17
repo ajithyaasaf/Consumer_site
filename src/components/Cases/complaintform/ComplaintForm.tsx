@@ -2,19 +2,25 @@
 
 import React, { useState } from "react"
 import { useRouter } from "next/navigation"
-import emailjs from "emailjs-com"
 import { useTranslations } from "next-intl"
+
+type FormData = {
+  name: string
+  email: string
+  phone: string
+  complaintType: string
+  description: string
+}
 
 const ComplaintForm = () => {
   const t = useTranslations("complaintForm") // Get translations for the "complaintForm" namespace
   const [isHovered, setIsHovered] = useState(false)
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     phone: "",
     complaintType: "",
     description: "",
-    consent: false,
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [message, setMessage] = useState("")
@@ -26,29 +32,23 @@ const ComplaintForm = () => {
     >
   ) => {
     const { name, value, type } = e.target
-    if (type === "checkbox") {
-      setFormData((prev) => ({
-        ...prev,
-        [name]: (e.target as HTMLInputElement).checked,
-      }))
-    } else {
-      setFormData((prev) => ({
-        ...prev,
-        [name]: value,
-      }))
-    }
+
+    setFormData((prev) => ({
+      ...prev,
+      [name as keyof FormData]: value, // Ensure name matches a key of FormData
+    }))
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
+    // Validate required fields
     if (
       !formData.name ||
       !formData.email ||
       !formData.phone ||
       !formData.complaintType ||
-      !formData.description ||
-      !formData.consent
+      !formData.description // Removed consent check
     ) {
       setMessage(t("message.requiredFields"))
       return
@@ -58,14 +58,20 @@ const ComplaintForm = () => {
     setMessage(t("message.submitting"))
 
     try {
-      const result = await emailjs.sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
-        e.target as HTMLFormElement,
-        "YOUR_USER_ID"
-      )
+      const response = await fetch("/api/sendEmail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          formType: "complaint", // Add this to the body
+          ...formData, // Spread the rest of the form data
+        }),
+      })
 
-      if (result.status === 200) {
+      const data = await response.json()
+
+      if (response.ok) {
         setMessage(t("message.success"))
         setFormData({
           name: "",
@@ -73,11 +79,10 @@ const ComplaintForm = () => {
           phone: "",
           complaintType: "",
           description: "",
-          consent: false,
         })
-        router.push("/thank-you") // Redirect to thank you page if needed
+        // Redirect to thank you page if needed
       } else {
-        setMessage(t("message.error"))
+        setMessage(data.error || t("message.error"))
       }
     } catch (error: any) {
       setMessage(t("message.error") + " Error: " + error.message)

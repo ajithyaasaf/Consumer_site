@@ -1,7 +1,6 @@
 "use client"
 
 import React, { useState } from "react"
-import emailjs from "emailjs-com"
 import TopNavOne from "@/components/Header/TopNav/TopNavOne"
 import MenuOne from "@/components/Header/Menu/MenuOne"
 import BreadcrumbItem from "@/components/Breadcrumb/BreadcrumbItem"
@@ -37,26 +36,24 @@ export default function MembershipForm() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    // EmailJS service details
-    const serviceID = "your_service_id"
-    const templateID = "your_template_id"
-    const public_Id = "9VMEM3abPPM9o7lOD"
-
-    // Prepare the data for EmailJS
-    const templateParams = {
-      name: formData.name,
-      email: formData.email,
-      phone: formData.phone,
-      address: formData.address,
-      profession: formData.profession,
-      willingToJoin: formData.willingToJoin,
+    const formDataWithType = {
+      ...formData,
+      formType: "membership", // Specify the form type as 'membership'
     }
 
-    // Send the email using EmailJS
-    emailjs.send(serviceID, templateID, templateParams, public_Id).then(
-      (response) => {
-        console.log("Email sent successfully", response)
-        setSuccessMessage(t("applyForMembership.successMessage"))
+    try {
+      const res = await fetch("/api/sendEmail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formDataWithType),
+      })
+
+      // Check if the response is OK
+      if (res.ok) {
+        const data = await res.json() // Read the JSON response
+        setSuccessMessage(data.message) // Assuming 'message' is returned on success
         setFormData({
           name: "",
           email: "",
@@ -66,12 +63,14 @@ export default function MembershipForm() {
           willingToJoin: "",
         })
         setTimeout(() => setSuccessMessage(""), 3000)
-      },
-      (error) => {
-        console.error("Error sending email:", error)
-        setErrorMessage(t("applyForMembership.errorMessage"))
+      } else {
+        const errorData = await res.json()
+        setErrorMessage(errorData.error || t("applyForMembership.errorMessage"))
       }
-    )
+    } catch (error) {
+      console.error("Error sending email:", error)
+      setErrorMessage(t("applyForMembership.errorMessage"))
+    }
   }
 
   return (
