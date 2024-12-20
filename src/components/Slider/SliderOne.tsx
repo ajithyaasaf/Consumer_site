@@ -51,10 +51,10 @@ const SliderOne = () => {
                   <div className="text-content flex-columns-between">
                     <div className="heading2 text-white font-bold">
                       <div className="relative overflow-hidden">
-                        <span className="block relative overflow-hidden">
+                        <span className="block relative overflow-hidden whitespace-pre-wrap">
                           {t("empowerAndProtect")}
                         </span>
-                        <span className="block absolute top-0 left-0 w-full h-full">
+                        <span className="block absolute top-0 left-0 w-full h-full whitespace-pre-wrap">
                           {t("empowerAndProtect")}
                         </span>
                       </div>

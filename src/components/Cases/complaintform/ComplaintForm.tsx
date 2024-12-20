@@ -82,7 +82,14 @@ const ComplaintForm = () => {
         })
         // Redirect to thank you page if needed
       } else {
-        setMessage(data.error || t("message.error"))
+        // Handle server-side errors
+        const errorMessage = data.error || t("message.error")
+        if (errorMessage.includes("Invalid login")) {
+          // User-friendly error message for authentication issues
+          setMessage(t("message.emailAuthError"))
+        } else {
+          setMessage(errorMessage)
+        }
       }
     } catch (error: any) {
       setMessage(t("message.error") + " Error: " + error.message)

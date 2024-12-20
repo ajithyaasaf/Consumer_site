@@ -149,7 +149,8 @@
       "requiredFields": "Please fill all required fields and agree to the terms.",
       "submitting": "Submitting...",
       "success": "Your complaint has been successfully submitted!",
-      "error": "Something went wrong. Please try again later."
+      "error": "Something went wrong. Please try again later.",
+      "emailAuthError": "There was an issue with email authentication. Please check your email configuration and try again."
     }
   },
   "historyPage": {
