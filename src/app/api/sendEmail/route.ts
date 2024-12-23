@@ -51,7 +51,7 @@ export async function POST(req: NextRequest) {
         <p><strong>Profession:</strong> ${profession}</p>
         <p><strong>Willing to Join:</strong> ${willingToJoin}</p>
       `
-      const toEmail = "rananthamurugan@gmail.com" // Recipient's email for membership
+      const toEmail = "tnccpctamilnadu2012@gmail.com" // Recipient's email for membership
 
       const mailOptions = {
         from: `"TNCCPC" <${process.env.EMAIL_USER}>`,
@@ -78,7 +78,7 @@ export async function POST(req: NextRequest) {
         <p><strong>Complaint Type:</strong> ${complaintType}</p>
         <p><strong>Description:</strong> ${description}</p>
       `
-      const toEmail = "rananthamurugan@gmail.com" // Recipient's email for complaints
+      const toEmail = "tnccpctamilnadu2012@gmail.com" // Recipient's email for complaints
 
       const mailOptions = {
         from: `"TNPCC" ${process.env.EMAIL_USER}`,
